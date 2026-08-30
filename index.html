@@ -30,6 +30,9 @@ header{
   top:0;
   background:#050505;
   z-index:10;
+  <button id="cartButton" onclick="showCart()">
+🛒 CART (0)
+</button>
 }
 
 .logo{
@@ -523,13 +526,40 @@ footer a:hover{
 
 
 <script>
+let cart = [];
 
-function addCart(product){
-
-  alert(product + " added to cart!");
-
+function addCart(product) {
+  cart.push(product);
+  alert(product + " added to cart! 🛒");
+  updateCart();
 }
 
+function updateCart() {
+  let count = cart.length;
+
+  let cartButton = document.getElementById("cartButton");
+
+  if (cartButton) {
+    cartButton.innerHTML = "🛒 CART (" + count + ")";
+  }
+}
+
+function showCart() {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  let message = "YOUR WAR SOUND CART\n\n";
+
+  cart.forEach((item, index) => {
+    message += (index + 1) + ". " + item + "\n";
+  });
+
+  message += "\nTotal Items: " + cart.length;
+
+  alert(message);
+}
 </script>
 
 </body>
