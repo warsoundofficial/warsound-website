@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WAR SOUND | Premium Audio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#050505;
+  color:white;
+}
+
+header{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  border-bottom:1px solid #222;
+  position:sticky;
+  top:0;
+  background:#050505;
+  z-index:10;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#e50914;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#e50914;
+}
+
+.hero{
+  min-height:560px;
+  padding:90px 7%;
+  display:flex;
+  align-items:center;
+  background:
+  radial-gradient(circle at 75% 45%,#700008 0%,#180002 25%,#050505 55%);
+}
+
+.hero-text{
+  max-width:600px;
+}
+
+.small{
+  color:#e50914;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+h1{
+  font-size:70px;
+  line-height:.95;
+  margin:15px 0;
+}
+
+h1 span{
+  color:#e50914;
+}
+
+.hero p{
+  color:#bbb;
+  font-size:19px;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  background:#e50914;
+  color:white;
+  text-decoration:none;
+  padding:16px 28px;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#ff202b;
+}
+
+.features{
+  display:flex;
+  gap:25px;
+  margin-top:35px;
+}
+
+.feature{
+  color:#ddd;
+  font-size:14px;
+}
+
+section{
+  padding:65px 6%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.title small{
+  color:#e50914;
+  font-weight:bold;
+}
+
+.title h2{
+  font-size:38px;
+  margin-top:8px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.card{
+  background:#111;
+  border:1px solid #282828;
+  border-radius:10px;
+  padding:18px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#e50914;
+}
+
+.product-img{
+  height:210px;
+  border-radius:7px;
+  background:linear-gradient(135deg,#242424,#080808);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+}
+
+.card h3{
+  margin-top:18px;
+}
+
+.card p{
+  color:#999;
+  font-size:14px;
+  margin:8px 0;
+}
+
+.price{
+  color:#e50914;
+  font-size:22px;
+  font-weight:bold;
+  margin:12px 0;
+}
+
+.cart{
+  width:100%;
+  padding:12px;
+  border:1px solid #e50914;
+  background:transparent;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.cart:hover{
+  background:#e50914;
+}
+
+.benefits{
+  background:#0b0b0b;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.benefit{
+  text-align:center;
+  padding:25px;
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.benefit h3{
+  margin-bottom:8px;
+}
+
+.benefit p{
+  color:#999;
+  font-size:14px;
+}
+
+footer{
+  background:#030303;
+  border-top:1px solid #222;
+  padding:50px 6%;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:30px;
+}
+
+footer h2{
+  margin-bottom:15px;
+}
+
+footer h2 span{
+  color:#e50914;
+}
+
+footer p,
+footer a{
+  color:#888;
+  line-height:2;
+  text-decoration:none;
+  display:block;
+}
+
+footer a:hover{
+  color:#e50914;
+}
+
+.copy{
+  text-align:center;
+  background:#030303;
+  color:#666;
+  padding:20px;
+  border-top:1px solid #151515;
+  font-size:13px;
+}
+
+@media(max-width:800px){
+
+  header{
+    padding:0 5%;
+  }
+
+  nav a{
+    margin-left:10px;
+    font-size:12px;
+  }
+
+  .hero{
+    min-height:500px;
+    padding:60px 7%;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .features{
+    flex-wrap:wrap;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .benefits{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  footer{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:480px){
+
+  nav a{
+    display:none;
+  }
+
+  .hero{
+    padding:55px 6%;
+  }
+
+  h1{
+    font-size:43px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .benefits{
+    grid-template-columns:1fr;
+  }
+
+  .title h2{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    WAR <span>SOUND</span>
+  </div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#about">ABOUT</a>
+    <a href="#support">SUPPORT</a>
+  </nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+  <div class="hero-text">
+
+    <div class="small">WAR SOUND</div>
+
+    <h1>
+      POWER<br>
+      <span>YOUR SOUND</span>
+    </h1>
+
+    <p>
+      Premium earphones and earbuds built for
+      powerful sound, deep bass and an immersive
+      listening experience.
+    </p>
+
+    <a class="btn" href="#shop">
+      SHOP EARPHONES →
+    </a>
+
+    <div class="features">
+
+      <div class="feature">🔊 DEEP BASS</div>
+      <div class="feature">⚡ LOW LATENCY</div>
+      <div class="feature">☎ CLEAR CALLS</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="shop">
+
+  <div class="title">
+    <small>FEATURED</small>
+    <h2>BEST OF WAR SOUND</h2>
+  </div>
+
+
+  <div class="products">
+
+    <div class="card">
+
+      <div class="product-img">🎧</div>
+
+      <h3>WAR SOUND X1</h3>
+
+      <p>Deep Bass. Strong Build.</p>
+
+      <div class="price">₹699</div>
+
+      <button class="cart" onclick="addCart('WAR SOUND X1')">
+        ADD TO CART
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="product-img">🎧</div>
+
+      <h3>WAR SOUND PRO</h3>
+
+      <p>Powerful sound for everyday use.</p>
+
+      <div class="price">₹999</div>
+
+      <button class="cart" onclick="addCart('WAR SOUND PRO')">
+        ADD TO CART
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="product-img">🎧</div>
+
+      <h3>WAR SOUND T20</h3>
+
+      <p>True Wireless. Total Freedom.</p>
+
+      <div class="price">₹1,499</div>
+
+      <button class="cart" onclick="addCart('WAR SOUND T20')">
+        ADD TO CART
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="product-img">🎧</div>
+
+      <h3>WAR SOUND BUDS</h3>
+
+      <p>Game Mode. Be the Best.</p>
+
+      <div class="price">₹1,199</div>
+
+      <button class="cart" onclick="addCart('WAR SOUND BUDS')">
+        ADD TO CART
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="benefits" id="about">
+
+  <div class="benefit">
+    <div class="icon">〰️</div>
+    <h3>PURE SOUND</h3>
+    <p>Clear and powerful audio experience.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="icon">🛡️</div>
+    <h3>BUILT TO LAST</h3>
+    <p>Strong build quality for everyday use.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="icon">🎧</div>
+    <h3>COMFORT FIT</h3>
+    <p>Designed for comfortable listening.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="icon">✓</div>
+    <h3>WARRANTY</h3>
+    <p>Product warranty and support.</p>
+  </div>
+
+</section>
+
+
+<footer id="support">
+
+  <div>
+    <h2>WAR <span>SOUND</span></h2>
+    <p>
+      Premium audio products built for people
+      who live for powerful sound.
+    </p>
+  </div>
+
+  <div>
+    <h3>QUICK LINKS</h3>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About Us</a>
+  </div>
+
+  <div>
+    <h3>SUPPORT</h3>
+    <a href="#">Track Order</a>
+    <a href="#">Shipping Policy</a>
+    <a href="#">Return Policy</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+</footer>
+
+<div class="copy">
+  © 2026 WAR SOUND. All Rights Reserved.
+</div>
+
+
+<script>
+
+function addCart(product){
+
+  alert(product + " added to cart!");
+
+}
+
+</script>
+
+</body>
+        </html>
