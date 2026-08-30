@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>WAR SOUND | Premium Audio</title>
 
 <style>
@@ -16,10 +15,9 @@
 body{
   font-family:Arial,sans-serif;
   background:#050505;
-  color:white;
+  color:#fff;
 }
 
-/* HEADER */
 header{
   height:70px;
   display:flex;
@@ -43,7 +41,7 @@ header{
 }
 
 nav a{
-  color:white;
+  color:#fff;
   text-decoration:none;
   margin-left:20px;
   font-size:14px;
@@ -55,15 +53,14 @@ nav a:hover{
 
 .cartButton{
   background:#e50914;
-  color:white;
-  border:none;
-  padding:10px 15px;
+  color:#fff;
+  border:0;
+  padding:10px 14px;
   border-radius:7px;
   font-weight:bold;
   cursor:pointer;
 }
 
-/* HERO */
 .hero{
   min-height:560px;
   padding:90px 7%;
@@ -103,7 +100,7 @@ h1 span{
 .btn{
   display:inline-block;
   background:#e50914;
-  color:white;
+  color:#fff;
   text-decoration:none;
   padding:16px 28px;
   border-radius:5px;
@@ -121,7 +118,6 @@ h1 span{
   font-size:14px;
 }
 
-/* SECTIONS */
 section{
   padding:65px 6%;
 }
@@ -141,7 +137,6 @@ section{
   margin-top:8px;
 }
 
-/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -203,7 +198,7 @@ section{
   padding:13px;
   border:1px solid #e50914;
   background:transparent;
-  color:white;
+  color:#fff;
   border-radius:7px;
   cursor:pointer;
   font-weight:bold;
@@ -213,7 +208,6 @@ section{
   background:#e50914;
 }
 
-/* BENEFITS */
 .benefits{
   background:#0b0b0b;
   display:grid;
@@ -240,7 +234,6 @@ section{
   font-size:14px;
 }
 
-/* FOOTER */
 footer{
   background:#030303;
   border-top:1px solid #222;
@@ -248,10 +241,6 @@ footer{
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
   gap:30px;
-}
-
-footer h2{
-  margin-bottom:15px;
 }
 
 footer h2 span{
@@ -275,24 +264,26 @@ footer a{
   font-size:13px;
 }
 
-/* CART POPUP */
-.cart-popup{
+/* CART */
+
+.cart-popup,
+.checkout-popup{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.8);
+  background:rgba(0,0,0,.85);
   z-index:9999;
   align-items:center;
   justify-content:center;
   padding:20px;
 }
 
-.cart-box{
+.cart-box,
+.checkout-box{
   background:#111;
-  color:white;
   width:100%;
   max-width:480px;
-  max-height:85vh;
+  max-height:90vh;
   overflow-y:auto;
   padding:22px;
   border-radius:18px;
@@ -300,22 +291,20 @@ footer a{
   box-shadow:0 0 40px rgba(229,9,20,.25);
 }
 
-.cart-header{
+.cart-header,
+.checkout-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #333;
   padding-bottom:15px;
+  border-bottom:1px solid #333;
 }
 
-.cart-header h2{
-  font-size:24px;
-}
-
-.close-cart{
+.close-cart,
+.checkout-close{
   background:none;
-  border:none;
-  color:white;
+  border:0;
+  color:#fff;
   font-size:30px;
   cursor:pointer;
 }
@@ -346,10 +335,10 @@ footer a{
 .quantity button{
   width:32px;
   height:32px;
-  border:none;
+  border:0;
   border-radius:6px;
   background:#e50914;
-  color:white;
+  color:#fff;
   font-size:20px;
   cursor:pointer;
 }
@@ -360,7 +349,7 @@ footer a{
 }
 
 .remove-btn{
-  grid-column:1 / -1;
+  grid-column:1/-1;
   width:max-content;
   background:none;
   border:1px solid #444;
@@ -370,22 +359,24 @@ footer a{
   cursor:pointer;
 }
 
-.cart-total{
-  font-size:22px;
-  font-weight:bold;
-  margin-top:20px;
+.cart-total,
+.checkout-total{
   display:flex;
   justify-content:space-between;
+  font-size:21px;
+  font-weight:bold;
+  margin-top:20px;
 }
 
-.checkout-btn{
+.checkout-btn,
+.place-order{
   width:100%;
   padding:15px;
   margin-top:18px;
-  border:none;
+  border:0;
   border-radius:10px;
   background:#e50914;
-  color:white;
+  color:#fff;
   font-size:16px;
   font-weight:bold;
   cursor:pointer;
@@ -397,9 +388,44 @@ footer a{
   padding:35px 10px;
 }
 
-/* MOBILE */
-@media(max-width:900px){
+/* CHECKOUT FORM */
 
+.checkout-box label{
+  display:block;
+  margin-top:15px;
+  margin-bottom:6px;
+  color:#ddd;
+  font-size:14px;
+}
+
+.checkout-box input,
+.checkout-box textarea{
+  width:100%;
+  padding:13px;
+  background:#050505;
+  border:1px solid #333;
+  border-radius:8px;
+  color:#fff;
+  font-size:15px;
+  outline:none;
+}
+
+.checkout-box input:focus,
+.checkout-box textarea:focus{
+  border-color:#e50914;
+}
+
+.checkout-summary{
+  margin-top:20px;
+  padding:15px;
+  background:#080808;
+  border-radius:10px;
+  border:1px solid #222;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
   .products{
     grid-template-columns:repeat(2,1fr);
   }
@@ -414,7 +440,6 @@ footer a{
 }
 
 @media(max-width:600px){
-
   header{
     padding:0 4%;
   }
@@ -428,8 +453,8 @@ footer a{
   }
 
   .cartButton{
-    padding:9px 11px;
     font-size:12px;
+    padding:9px 11px;
   }
 
   .hero{
@@ -450,20 +475,13 @@ footer a{
     gap:15px;
   }
 
-  .products{
-    grid-template-columns:1fr;
-  }
-
+  .products,
   .benefits{
     grid-template-columns:1fr;
   }
 
   footer{
     grid-template-columns:1fr;
-  }
-
-  .cart-box{
-    padding:18px;
   }
 }
 </style>
@@ -472,6 +490,7 @@ footer a{
 <body>
 
 <!-- HEADER -->
+
 <header>
 
   <div class="logo">
@@ -485,7 +504,7 @@ footer a{
     <a href="#support">SUPPORT</a>
   </nav>
 
-  <button id="cartButton" class="cartButton" onclick="showCart()">
+  <button class="cartButton" onclick="showCart()">
     🛒 CART (<span id="cartCount">0</span>)
   </button>
 
@@ -493,6 +512,7 @@ footer a{
 
 
 <!-- HERO -->
+
 <section class="hero" id="home">
 
   <div class="hero-text">
@@ -525,7 +545,8 @@ footer a{
 </section>
 
 
-<!-- SHOP -->
+<!-- PRODUCTS -->
+
 <section id="shop">
 
   <div class="title">
@@ -535,7 +556,7 @@ footer a{
 
   <div class="products">
 
-    <!-- PRODUCT 1 -->
+
     <div class="card">
 
       <div class="product-img">
@@ -556,7 +577,6 @@ footer a{
     </div>
 
 
-    <!-- PRODUCT 2 -->
     <div class="card">
 
       <div class="product-img">
@@ -578,7 +598,6 @@ footer a{
     </div>
 
 
-    <!-- PRODUCT 3 -->
     <div class="card">
 
       <div class="product-img">
@@ -599,7 +618,6 @@ footer a{
     </div>
 
 
-    <!-- PRODUCT 4 -->
     <div class="card">
 
       <div class="product-img">
@@ -625,6 +643,7 @@ footer a{
 
 
 <!-- BENEFITS -->
+
 <section class="benefits" id="about">
 
   <div class="benefit">
@@ -655,11 +674,11 @@ footer a{
 
 
 <!-- FOOTER -->
+
 <footer id="support">
 
   <div>
     <h2>WAR <span>SOUND</span></h2>
-
     <p>
       Premium audio products built for people
       who live for powerful sound.
@@ -683,13 +702,13 @@ footer a{
 
 </footer>
 
-
 <div class="copy">
   © 2026 WAR SOUND. All Rights Reserved.
 </div>
 
 
 <!-- CART POPUP -->
+
 <div id="cartPopup" class="cart-popup">
 
   <div class="cart-box">
@@ -708,7 +727,8 @@ footer a{
       <span>₹<span id="cartTotal">0</span></span>
     </div>
 
-    <button class="checkout-btn">
+    <button class="checkout-btn"
+      onclick="openCheckout()">
       CHECKOUT
     </button>
 
@@ -717,14 +737,97 @@ footer a{
 </div>
 
 
+<!-- CHECKOUT POPUP -->
+
+<div id="checkoutPopup" class="checkout-popup">
+
+  <div class="checkout-box">
+
+    <div class="checkout-header">
+      <h2>CHECKOUT</h2>
+
+      <button class="checkout-close"
+        onclick="closeCheckout()">×</button>
+    </div>
+
+    <form id="checkoutForm">
+
+      <label>Full Name</label>
+      <input
+        type="text"
+        id="customerName"
+        placeholder="Enter your name"
+        required>
+
+      <label>Mobile Number</label>
+      <input
+        type="tel"
+        id="customerPhone"
+        placeholder="10 digit mobile number"
+        inputmode="numeric"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required>
+
+      <label>Delivery Address</label>
+      <textarea
+        id="customerAddress"
+        rows="3"
+        placeholder="House / Street / Area"
+        required></textarea>
+
+      <label>City</label>
+      <input
+        type="text"
+        id="customerCity"
+        placeholder="Enter city"
+        required>
+
+      <label>PIN Code</label>
+      <input
+        type="text"
+        id="customerPin"
+        placeholder="6 digit PIN code"
+        inputmode="numeric"
+        pattern="[0-9]{6}"
+        maxlength="6"
+        required>
+
+      <div class="checkout-summary">
+
+        <h3>Order Summary</h3>
+
+        <div id="checkoutItems"></div>
+
+        <div class="checkout-total">
+          <span>Total</span>
+          <span>₹<span id="checkoutTotal">0</span></span>
+        </div>
+
+      </div>
+
+      <button type="submit"
+        class="place-order">
+        PLACE ORDER
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
 <!-- JAVASCRIPT -->
+
 <script>
 
 let cart = [];
 
 
-/* ADD PRODUCT */
-function addCart(name, price){
+/* ADD TO CART */
+
+function addCart(name,price){
 
   let item = cart.find(
     product => product.name === name
@@ -751,6 +854,7 @@ function addCart(name, price){
 
 
 /* INCREASE */
+
 function increaseQty(index){
 
   cart[index].qty++;
@@ -760,6 +864,7 @@ function increaseQty(index){
 
 
 /* DECREASE */
+
 function decreaseQty(index){
 
   if(cart[index].qty > 1){
@@ -777,6 +882,7 @@ function decreaseQty(index){
 
 
 /* REMOVE */
+
 function removeItem(index){
 
   cart.splice(index,1);
@@ -786,6 +892,7 @@ function removeItem(index){
 
 
 /* UPDATE CART */
+
 function updateCart(){
 
   const cartItems =
@@ -797,10 +904,8 @@ function updateCart(){
   const cartCount =
     document.getElementById("cartCount");
 
-
   let total = 0;
   let count = 0;
-
 
   if(cart.length === 0){
 
@@ -811,13 +916,11 @@ function updateCart(){
 
     cartItems.innerHTML = "";
 
-
     cart.forEach((item,index)=>{
 
       total += item.price * item.qty;
 
       count += item.qty;
-
 
       cartItems.innerHTML += `
 
@@ -835,7 +938,6 @@ function updateCart(){
 
           </div>
 
-
           <div class="quantity">
 
             <button
@@ -843,9 +945,7 @@ function updateCart(){
               −
             </button>
 
-            <span>
-              ${item.qty}
-            </span>
+            <span>${item.qty}</span>
 
             <button
               onclick="increaseQty(${index})">
@@ -854,13 +954,10 @@ function updateCart(){
 
           </div>
 
-
           <button
             class="remove-btn"
             onclick="removeItem(${index})">
-
             Remove
-
           </button>
 
         </div>
@@ -871,7 +968,6 @@ function updateCart(){
 
   }
 
-
   cartTotal.innerText = total;
 
   cartCount.innerText = count;
@@ -879,6 +975,7 @@ function updateCart(){
 
 
 /* OPEN CART */
+
 function showCart(){
 
   document.getElementById("cartPopup")
@@ -888,6 +985,7 @@ function showCart(){
 
 
 /* CLOSE CART */
+
 function closeCart(){
 
   document.getElementById("cartPopup")
@@ -896,8 +994,141 @@ function closeCart(){
 }
 
 
-/* CLOSE WHEN OUTSIDE CLICK */
-document.getElementById("cartPopup")
+/* OPEN CHECKOUT */
+
+function openCheckout(){
+
+  if(cart.length === 0){
+
+    alert("Your cart is empty 🛒");
+
+    return;
+
+  }
+
+  updateCheckout();
+
+  document.getElementById("cartPopup")
+    .style.display = "none";
+
+  document.getElementById("checkoutPopup")
+    .style.display = "flex";
+
+}
+
+
+/* CLOSE CHECKOUT */
+
+function closeCheckout(){
+
+  document.getElementById("checkoutPopup")
+    .style.display = "none";
+
+}
+
+
+/* UPDATE CHECKOUT */
+
+function updateCheckout(){
+
+  const items =
+    document.getElementById("checkoutItems");
+
+  const totalElement =
+    document.getElementById("checkoutTotal");
+
+  let total = 0;
+
+  items.innerHTML = "";
+
+  cart.forEach(item=>{
+
+    total += item.price * item.qty;
+
+    items.innerHTML += `
+
+      <div style="
+        display:flex;
+        justify-content:space-between;
+        padding:9px 0;
+        border-bottom:1px solid #222;
+      ">
+
+        <span>
+          ${item.name} × ${item.qty}
+        </span>
+
+        <strong>
+          ₹${item.price * item.qty}
+        </strong>
+
+      </div>
+
+    `;
+
+  });
+
+  totalElement.innerText = total;
+}
+
+
+/* PLACE ORDER */
+
+document
+  .getElementById("checkoutForm")
+  .addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    if(cart.length === 0){
+
+      alert("Your cart is empty.");
+
+      return;
+
+    }
+
+    const name =
+      document.getElementById("customerName").value;
+
+    const phone =
+      document.getElementById("customerPhone").value;
+
+    const address =
+      document.getElementById("customerAddress").value;
+
+    const city =
+      document.getElementById("customerCity").value;
+
+    const pin =
+      document.getElementById("customerPin").value;
+
+    let total = 0;
+
+    cart.forEach(item=>{
+
+      total += item.price * item.qty;
+
+    });
+
+    alert(
+      "WAR SOUND ORDER\n\n" +
+      "Name: " + name + "\n" +
+      "Mobile: " + phone + "\n" +
+      "Address: " + address + "\n" +
+      "City: " + city + "\n" +
+      "PIN: " + pin + "\n\n" +
+      "Total: ₹" + total +
+      "\n\nOrder details received!"
+    );
+
+});
+
+
+/* CLOSE CART OUTSIDE */
+
+document
+  .getElementById("cartPopup")
   .addEventListener("click",function(event){
 
     if(event.target === this){
@@ -909,7 +1140,23 @@ document.getElementById("cartPopup")
   });
 
 
+/* CLOSE CHECKOUT OUTSIDE */
+
+document
+  .getElementById("checkoutPopup")
+  .addEventListener("click",function(event){
+
+    if(event.target === this){
+
+      closeCheckout();
+
+    }
+
+  });
+
+
 /* START */
+
 updateCart();
 
 </script>
