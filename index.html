@@ -5,6 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>WAR SOUND | Premium Audio</title>
+.cart-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 9999;
+}
+
+.cart-box {
+  background: #111;
+  color: white;
+  width: 90%;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #ff1a1a;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+}
+
+.qty button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #ff1a1a;
+  color: white;
+  font-size: 18px;
+}
+
+.qty span {
+  margin: 0 10px;
+}
+
+.cart-total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #ff1a1a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 <style>
 *{
@@ -12,7 +83,32 @@
   padding:0;
   box-sizing:border-box;
 }
+<style>
 
+...tumhara CSS...
+
+</style>
+
+<div id="cartPopup" class="cart-popup">
+  <div class="cart-box">
+
+    <div class="cart-header">
+      <h2>🛒 Your Cart</h2>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      Total: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <button class="checkout-btn">
+      CHECKOUT
+    </button>
+
+  </div>
+</div>
 body{
   font-family:Arial, sans-serif;
   background:#050505;
