@@ -5,77 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>WAR SOUND | Premium Audio</title>
-.cart-popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.75);
-  z-index: 9999;
-}
-
-.cart-box {
-  background: #111;
-  color: white;
-  width: 90%;
-  max-width: 450px;
-  margin: 80px auto;
-  padding: 20px;
-  border-radius: 18px;
-  border: 1px solid #ff1a1a;
-}
-
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close-cart {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  border-bottom: 1px solid #333;
-}
-
-.qty button {
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 6px;
-  background: #ff1a1a;
-  color: white;
-  font-size: 18px;
-}
-
-.qty span {
-  margin: 0 10px;
-}
-
-.cart-total {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.checkout-btn {
-  width: 100%;
-  padding: 14px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 10px;
-  background: #ff1a1a;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-}
 
 <style>
 *{
@@ -83,38 +12,14 @@
   padding:0;
   box-sizing:border-box;
 }
-<style>
 
-...tumhara CSS...
-
-</style>
-
-<div id="cartPopup" class="cart-popup">
-  <div class="cart-box">
-
-    <div class="cart-header">
-      <h2>🛒 Your Cart</h2>
-      <button class="close-cart" onclick="closeCart()">×</button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-      Total: ₹<span id="cartTotal">0</span>
-    </div>
-
-    <button class="checkout-btn">
-      CHECKOUT
-    </button>
-
-  </div>
-</div>
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#050505;
   color:white;
 }
 
+/* HEADER */
 header{
   height:70px;
   display:flex;
@@ -125,13 +30,12 @@ header{
   position:sticky;
   top:0;
   background:#050505;
-  z-index:10;
+  z-index:100;
 }
 
 .logo{
   font-size:25px;
   font-weight:900;
-  letter-spacing:1px;
 }
 
 .logo span{
@@ -141,7 +45,7 @@ header{
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:25px;
+  margin-left:20px;
   font-size:14px;
 }
 
@@ -149,6 +53,17 @@ nav a:hover{
   color:#e50914;
 }
 
+.cartButton{
+  background:#e50914;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:7px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* HERO */
 .hero{
   min-height:560px;
   padding:90px 7%;
@@ -195,10 +110,6 @@ h1 span{
   font-weight:bold;
 }
 
-.btn:hover{
-  background:#ff202b;
-}
-
 .features{
   display:flex;
   gap:25px;
@@ -210,6 +121,7 @@ h1 span{
   font-size:14px;
 }
 
+/* SECTIONS */
 section{
   padding:65px 6%;
 }
@@ -229,6 +141,7 @@ section{
   margin-top:8px;
 }
 
+/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -255,6 +168,16 @@ section{
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.emoji{
   font-size:65px;
 }
 
@@ -277,18 +200,20 @@ section{
 
 .cart{
   width:100%;
-  padding:12px;
+  padding:13px;
   border:1px solid #e50914;
   background:transparent;
   color:white;
-  border-radius:5px;
+  border-radius:7px;
   cursor:pointer;
+  font-weight:bold;
 }
 
 .cart:hover{
   background:#e50914;
 }
 
+/* BENEFITS */
 .benefits{
   background:#0b0b0b;
   display:grid;
@@ -315,6 +240,7 @@ section{
   font-size:14px;
 }
 
+/* FOOTER */
 footer{
   background:#030303;
   border-top:1px solid #222;
@@ -340,10 +266,6 @@ footer a{
   display:block;
 }
 
-footer a:hover{
-  color:#e50914;
-}
-
 .copy{
   text-align:center;
   background:#030303;
@@ -353,29 +275,130 @@ footer a:hover{
   font-size:13px;
 }
 
-@media(max-width:800px){
+/* CART POPUP */
+.cart-popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
 
-  header{
-    padding:0 5%;
-  }
+.cart-box{
+  background:#111;
+  color:white;
+  width:100%;
+  max-width:480px;
+  max-height:85vh;
+  overflow-y:auto;
+  padding:22px;
+  border-radius:18px;
+  border:1px solid #e50914;
+  box-shadow:0 0 40px rgba(229,9,20,.25);
+}
 
-  nav a{
-    margin-left:10px;
-    font-size:12px;
-  }
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #333;
+  padding-bottom:15px;
+}
 
-  .hero{
-    min-height:500px;
-    padding:60px 7%;
-  }
+.cart-header h2{
+  font-size:24px;
+}
 
-  h1{
-    font-size:48px;
-  }
+.close-cart{
+  background:none;
+  border:none;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+}
 
-  .features{
-    flex-wrap:wrap;
-  }
+.cart-item{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  padding:18px 0;
+  border-bottom:1px solid #333;
+}
+
+.cart-item-name{
+  font-weight:bold;
+}
+
+.cart-item-price{
+  color:#999;
+  margin-top:5px;
+}
+
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.quantity button{
+  width:32px;
+  height:32px;
+  border:none;
+  border-radius:6px;
+  background:#e50914;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.quantity span{
+  min-width:20px;
+  text-align:center;
+}
+
+.remove-btn{
+  grid-column:1 / -1;
+  width:max-content;
+  background:none;
+  border:1px solid #444;
+  color:#aaa;
+  padding:6px 10px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.cart-total{
+  font-size:22px;
+  font-weight:bold;
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.checkout-btn{
+  width:100%;
+  padding:15px;
+  margin-top:18px;
+  border:none;
+  border-radius:10px;
+  background:#e50914;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.empty-cart{
+  text-align:center;
+  color:#888;
+  padding:35px 10px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
 
   .products{
     grid-template-columns:repeat(2,1fr);
@@ -385,19 +408,33 @@ footer a:hover{
     grid-template-columns:repeat(2,1fr);
   }
 
-  footer{
-    grid-template-columns:1fr;
+  h1{
+    font-size:55px;
   }
 }
 
-@media(max-width:480px){
+@media(max-width:600px){
 
-  nav a{
+  header{
+    padding:0 4%;
+  }
+
+  nav{
     display:none;
   }
 
+  .logo{
+    font-size:21px;
+  }
+
+  .cartButton{
+    padding:9px 11px;
+    font-size:12px;
+  }
+
   .hero{
-    padding:55px 6%;
+    min-height:500px;
+    padding:60px 6%;
   }
 
   h1{
@@ -408,6 +445,11 @@ footer a:hover{
     font-size:16px;
   }
 
+  .features{
+    flex-wrap:wrap;
+    gap:15px;
+  }
+
   .products{
     grid-template-columns:1fr;
   }
@@ -416,8 +458,12 @@ footer a:hover{
     grid-template-columns:1fr;
   }
 
-  .title h2{
-    font-size:30px;
+  footer{
+    grid-template-columns:1fr;
+  }
+
+  .cart-box{
+    padding:18px;
   }
 }
 </style>
@@ -425,6 +471,7 @@ footer a:hover{
 
 <body>
 
+<!-- HEADER -->
 <header>
 
   <div class="logo">
@@ -438,9 +485,14 @@ footer a:hover{
     <a href="#support">SUPPORT</a>
   </nav>
 
+  <button id="cartButton" class="cartButton" onclick="showCart()">
+    🛒 CART (<span id="cartCount">0</span>)
+  </button>
+
 </header>
 
 
+<!-- HERO -->
 <section class="hero" id="home">
 
   <div class="hero-text">
@@ -463,11 +515,9 @@ footer a:hover{
     </a>
 
     <div class="features">
-
       <div class="feature">🔊 DEEP BASS</div>
       <div class="feature">⚡ LOW LATENCY</div>
       <div class="feature">☎ CLEAR CALLS</div>
-
     </div>
 
   </div>
@@ -475,6 +525,7 @@ footer a:hover{
 </section>
 
 
+<!-- SHOP -->
 <section id="shop">
 
   <div class="title">
@@ -482,12 +533,14 @@ footer a:hover{
     <h2>BEST OF WAR SOUND</h2>
   </div>
 
-
   <div class="products">
 
+    <!-- PRODUCT 1 -->
     <div class="card">
 
-      <div class="product-img">🎧</div>
+      <div class="product-img">
+        <div class="emoji">🎧</div>
+      </div>
 
       <h3>WAR SOUND X1</h3>
 
@@ -495,50 +548,63 @@ footer a:hover{
 
       <div class="price">₹699</div>
 
-      <button class="cart" onclick="addCart('WAR SOUND X1')">
-        ADD TO CART
+      <button class="cart"
+        onclick="addCart('WAR SOUND X1',699)">
+        🛒 ADD TO CART
       </button>
 
     </div>
 
 
+    <!-- PRODUCT 2 -->
     <div class="card">
 
       <div class="product-img">
-  <img src="./ic_launcher.png" alt="WAR SOUND T20">
-</div>
+        <img src="./ic_launcher.png"
+             alt="WAR SOUND T20">
+      </div>
+
+      <h3>WAR SOUND T20</h3>
 
       <p>Powerful sound for everyday use.</p>
 
       <div class="price">₹999</div>
 
-      <button class="cart" onclick="addCart('WAR SOUND T20')">
-  ADD TO CART
+      <button class="cart"
+        onclick="addCart('WAR SOUND T20',999)">
+        🛒 ADD TO CART
       </button>
 
     </div>
 
 
+    <!-- PRODUCT 3 -->
     <div class="card">
 
-      <div class="product-img">🎧</div>
+      <div class="product-img">
+        <div class="emoji">🎧</div>
+      </div>
 
-      <h3>WAR SOUND T20</h3>
+      <h3>WAR SOUND PRO</h3>
 
       <p>True Wireless. Total Freedom.</p>
 
       <div class="price">₹1,499</div>
 
-      <button class="cart" onclick="addCart('WAR SOUND T20')">
-        ADD TO CART
+      <button class="cart"
+        onclick="addCart('WAR SOUND PRO',1499)">
+        🛒 ADD TO CART
       </button>
 
     </div>
 
 
+    <!-- PRODUCT 4 -->
     <div class="card">
 
-      <div class="product-img">🎧</div>
+      <div class="product-img">
+        <div class="emoji">🎧</div>
+      </div>
 
       <h3>WAR SOUND BUDS</h3>
 
@@ -546,8 +612,9 @@ footer a:hover{
 
       <div class="price">₹1,199</div>
 
-      <button class="cart" onclick="addCart('WAR SOUND BUDS')">
-        ADD TO CART
+      <button class="cart"
+        onclick="addCart('WAR SOUND BUDS',1199)">
+        🛒 ADD TO CART
       </button>
 
     </div>
@@ -557,6 +624,7 @@ footer a:hover{
 </section>
 
 
+<!-- BENEFITS -->
 <section class="benefits" id="about">
 
   <div class="benefit">
@@ -586,10 +654,12 @@ footer a:hover{
 </section>
 
 
+<!-- FOOTER -->
 <footer id="support">
 
   <div>
     <h2>WAR <span>SOUND</span></h2>
+
     <p>
       Premium audio products built for people
       who live for powerful sound.
@@ -613,47 +683,236 @@ footer a:hover{
 
 </footer>
 
+
 <div class="copy">
   © 2026 WAR SOUND. All Rights Reserved.
 </div>
 
 
+<!-- CART POPUP -->
+<div id="cartPopup" class="cart-popup">
+
+  <div class="cart-box">
+
+    <div class="cart-header">
+      <h2>🛒 Your Cart</h2>
+
+      <button class="close-cart"
+        onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <span>₹<span id="cartTotal">0</span></span>
+    </div>
+
+    <button class="checkout-btn">
+      CHECKOUT
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
 <script>
+
 let cart = [];
 
-function addCart(product) {
-  cart.push(product);
-  alert(product + " added to cart! 🛒");
+
+/* ADD PRODUCT */
+function addCart(name, price){
+
+  let item = cart.find(
+    product => product.name === name
+  );
+
+  if(item){
+
+    item.qty++;
+
+  }else{
+
+    cart.push({
+      name:name,
+      price:price,
+      qty:1
+    });
+
+  }
+
+  updateCart();
+
+  showCart();
+}
+
+
+/* INCREASE */
+function increaseQty(index){
+
+  cart[index].qty++;
+
   updateCart();
 }
 
-function updateCart() {
-  let count = cart.length;
 
-  let cartButton = document.getElementById("cartButton");
+/* DECREASE */
+function decreaseQty(index){
 
-  if (cartButton) {
-    cartButton.innerHTML = "🛒 CART (" + count + ")";
+  if(cart[index].qty > 1){
+
+    cart[index].qty--;
+
+  }else{
+
+    cart.splice(index,1);
+
   }
+
+  updateCart();
 }
 
-function showCart() {
-  if (cart.length === 0) {
-    alert("Your cart is empty.");
-    return;
+
+/* REMOVE */
+function removeItem(index){
+
+  cart.splice(index,1);
+
+  updateCart();
+}
+
+
+/* UPDATE CART */
+function updateCart(){
+
+  const cartItems =
+    document.getElementById("cartItems");
+
+  const cartTotal =
+    document.getElementById("cartTotal");
+
+  const cartCount =
+    document.getElementById("cartCount");
+
+
+  let total = 0;
+  let count = 0;
+
+
+  if(cart.length === 0){
+
+    cartItems.innerHTML =
+      '<div class="empty-cart">Your cart is empty 🛒</div>';
+
+  }else{
+
+    cartItems.innerHTML = "";
+
+
+    cart.forEach((item,index)=>{
+
+      total += item.price * item.qty;
+
+      count += item.qty;
+
+
+      cartItems.innerHTML += `
+
+        <div class="cart-item">
+
+          <div>
+
+            <div class="cart-item-name">
+              ${item.name}
+            </div>
+
+            <div class="cart-item-price">
+              ₹${item.price} × ${item.qty}
+            </div>
+
+          </div>
+
+
+          <div class="quantity">
+
+            <button
+              onclick="decreaseQty(${index})">
+              −
+            </button>
+
+            <span>
+              ${item.qty}
+            </span>
+
+            <button
+              onclick="increaseQty(${index})">
+              +
+            </button>
+
+          </div>
+
+
+          <button
+            class="remove-btn"
+            onclick="removeItem(${index})">
+
+            Remove
+
+          </button>
+
+        </div>
+
+      `;
+
+    });
+
   }
 
-  let message = "YOUR WAR SOUND CART\n\n";
 
-  cart.forEach((item, index) => {
-    message += (index + 1) + ". " + item + "\n";
+  cartTotal.innerText = total;
+
+  cartCount.innerText = count;
+}
+
+
+/* OPEN CART */
+function showCart(){
+
+  document.getElementById("cartPopup")
+    .style.display = "flex";
+
+}
+
+
+/* CLOSE CART */
+function closeCart(){
+
+  document.getElementById("cartPopup")
+    .style.display = "none";
+
+}
+
+
+/* CLOSE WHEN OUTSIDE CLICK */
+document.getElementById("cartPopup")
+  .addEventListener("click",function(event){
+
+    if(event.target === this){
+
+      closeCart();
+
+    }
+
   });
 
-  message += "\nTotal Items: " + cart.length;
 
-  alert(message);
-}
+/* START */
+updateCart();
+
 </script>
 
 </body>
-        </html>
+</html>
