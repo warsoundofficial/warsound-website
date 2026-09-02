@@ -3,509 +3,440 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WAR SOUND | Premium Audio</title>
+
+<title>WAR SOUND - Premium Audio</title>
 
 <style>
+
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
 body{
-  font-family:Arial,sans-serif;
   background:#050505;
   color:#fff;
 }
 
+/* HEADER */
+
 header{
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 6%;
+  background:#090909;
   border-bottom:1px solid #222;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   position:sticky;
   top:0;
-  background:#050505;
   z-index:100;
 }
 
 .logo{
+  color:#e50914;
   font-size:25px;
   font-weight:900;
-}
-
-.logo span{
-  color:#e50914;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
-}
-
-nav a:hover{
-  color:#e50914;
+  letter-spacing:2px;
 }
 
 .cartButton{
   background:#e50914;
-  color:#fff;
+  color:white;
   border:0;
-  padding:10px 14px;
-  border-radius:7px;
+  padding:11px 18px;
+  border-radius:8px;
   font-weight:bold;
   cursor:pointer;
 }
 
+/* HERO */
+
 .hero{
-  min-height:560px;
-  padding:90px 7%;
-  display:flex;
-  align-items:center;
+  text-align:center;
+  padding:70px 20px;
   background:
-  radial-gradient(circle at 75% 45%,#700008 0%,#180002 25%,#050505 55%);
+    radial-gradient(
+      circle at center,
+      #350000 0%,
+      #090909 45%,
+      #050505 75%
+    );
 }
 
-.hero-text{
-  max-width:600px;
-}
-
-.small{
+.hero h1{
+  font-size:50px;
   color:#e50914;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
-h1{
-  font-size:70px;
-  line-height:.95;
-  margin:15px 0;
-}
-
-h1 span{
-  color:#e50914;
+  letter-spacing:4px;
+  margin-bottom:15px;
 }
 
 .hero p{
-  color:#bbb;
-  font-size:19px;
-  line-height:1.6;
-  margin-bottom:30px;
+  color:#ccc;
+  font-size:18px;
 }
 
-.btn{
-  display:inline-block;
-  background:#e50914;
-  color:#fff;
-  text-decoration:none;
-  padding:16px 28px;
-  border-radius:5px;
-  font-weight:bold;
-}
-
-.features{
-  display:flex;
-  gap:25px;
-  margin-top:35px;
-}
-
-.feature{
-  color:#ddd;
-  font-size:14px;
-}
-
-section{
-  padding:65px 6%;
-}
-
-.title{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.title small{
-  color:#e50914;
-  font-weight:bold;
-}
-
-.title h2{
-  font-size:38px;
-  margin-top:8px;
-}
+/* PRODUCTS */
 
 .products{
+  padding:45px 5%;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
 }
 
-.card{
-  background:#111;
-  border:1px solid #282828;
-  border-radius:10px;
-  padding:18px;
+.product{
+  background:#101010;
+  border:1px solid #252525;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
   transition:.3s;
 }
 
-.card:hover{
-  transform:translateY(-6px);
+.product:hover{
+  transform:translateY(-5px);
   border-color:#e50914;
+  box-shadow:
+    0 0 25px rgba(229,9,20,.25);
 }
 
-.product-img{
-  height:210px;
-  border-radius:7px;
-  background:linear-gradient(135deg,#242424,#080808);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.product-img img{
+.product img{
   width:100%;
-  height:100%;
+  height:210px;
   object-fit:contain;
+  margin-bottom:15px;
 }
 
-.emoji{
-  font-size:65px;
-}
-
-.card h3{
-  margin-top:18px;
-}
-
-.card p{
-  color:#999;
-  font-size:14px;
-  margin:8px 0;
+.product h2{
+  margin-bottom:10px;
 }
 
 .price{
   color:#e50914;
   font-size:22px;
   font-weight:bold;
-  margin:12px 0;
+  margin-bottom:15px;
 }
 
-.cart{
+.add-btn{
   width:100%;
   padding:13px;
-  border:1px solid #e50914;
-  background:transparent;
-  color:#fff;
-  border-radius:7px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.cart:hover{
+  border:0;
+  border-radius:9px;
   background:#e50914;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.benefits{
-  background:#0b0b0b;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.benefit{
-  text-align:center;
-  padding:25px;
-}
-
-.icon{
-  font-size:35px;
-  margin-bottom:12px;
-}
-
-.benefit h3{
-  margin-bottom:8px;
-}
-
-.benefit p{
-  color:#999;
-  font-size:14px;
-}
-
-footer{
-  background:#030303;
-  border-top:1px solid #222;
-  padding:50px 6%;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:30px;
-}
-
-footer h2 span{
-  color:#e50914;
-}
-
-footer p,
-footer a{
-  color:#888;
-  line-height:2;
-  text-decoration:none;
-  display:block;
-}
-
-.copy{
-  text-align:center;
-  background:#030303;
-  color:#666;
-  padding:20px;
-  border-top:1px solid #151515;
-  font-size:13px;
-}
-
-/* CART */
+/* POPUPS */
 
 .cart-popup,
 .checkout-popup{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.85);
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
+  background:rgba(0,0,0,.82);
+  z-index:999;
   padding:20px;
+  overflow:auto;
 }
 
 .cart-box,
 .checkout-box{
-  background:#111;
   width:100%;
-  max-width:480px;
-  max-height:90vh;
-  overflow-y:auto;
-  padding:22px;
-  border-radius:18px;
-  border:1px solid #e50914;
-  box-shadow:0 0 40px rgba(229,9,20,.25);
+  max-width:550px;
+  margin:40px auto;
+  background:#101010;
+  border:1px solid #333;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:
+    0 0 40px rgba(229,9,20,.2);
 }
+
+/* HEADERS */
 
 .cart-header,
 .checkout-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding-bottom:15px;
   border-bottom:1px solid #333;
+  padding-bottom:15px;
+  margin-bottom:15px;
 }
 
-.close-cart,
+.close-btn,
 .checkout-close{
   background:none;
   border:0;
-  color:#fff;
-  font-size:30px;
+  color:white;
+  font-size:28px;
   cursor:pointer;
 }
 
+/* CART ITEMS */
+
 .cart-item{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:12px;
-  padding:18px 0;
-  border-bottom:1px solid #333;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:15px 0;
+  border-bottom:1px solid #292929;
 }
 
-.cart-item-name{
-  font-weight:bold;
+.cart-info{
+  flex:1;
 }
 
-.cart-item-price{
-  color:#999;
+.cart-info h3{
+  font-size:16px;
+}
+
+.cart-info p{
+  color:#e50914;
   margin-top:5px;
 }
 
-.quantity{
+.qty{
   display:flex;
   align-items:center;
   gap:8px;
 }
 
-.quantity button{
-  width:32px;
-  height:32px;
+.qty button{
+  width:30px;
+  height:30px;
   border:0;
-  border-radius:6px;
+  border-radius:5px;
   background:#e50914;
-  color:#fff;
-  font-size:20px;
+  color:white;
+  font-size:18px;
   cursor:pointer;
 }
 
-.quantity span{
-  min-width:20px;
-  text-align:center;
-}
-
 .remove-btn{
-  grid-column:1/-1;
-  width:max-content;
-  background:none;
-  border:1px solid #444;
-  color:#aaa;
-  padding:6px 10px;
+  background:#333;
+  color:white;
+  border:0;
+  padding:7px;
   border-radius:5px;
   cursor:pointer;
 }
 
-.cart-total,
-.checkout-total{
+/* TOTAL */
+
+.cart-total{
   display:flex;
   justify-content:space-between;
-  font-size:21px;
+  font-size:20px;
   font-weight:bold;
-  margin-top:20px;
+  padding:20px 0;
 }
 
 .checkout-btn,
 .place-order{
   width:100%;
-  padding:15px;
-  margin-top:18px;
+  padding:14px;
   border:0;
-  border-radius:10px;
+  border-radius:9px;
   background:#e50914;
-  color:#fff;
+  color:white;
   font-size:16px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.empty-cart{
-  text-align:center;
-  color:#888;
-  padding:35px 10px;
+/* FORM */
+
+.form-group{
+  margin-bottom:15px;
 }
 
-/* CHECKOUT FORM */
-
-.checkout-box label{
+.form-group label{
   display:block;
-  margin-top:15px;
-  margin-bottom:6px;
-  color:#ddd;
-  font-size:14px;
+  margin-bottom:7px;
+  color:#ccc;
 }
 
-.checkout-box input,
-.checkout-box textarea{
+.form-group input,
+.form-group textarea{
   width:100%;
   padding:13px;
-  background:#050505;
+  background:#181818;
   border:1px solid #333;
   border-radius:8px;
-  color:#fff;
-  font-size:15px;
+  color:white;
   outline:none;
 }
 
-.checkout-box input:focus,
-.checkout-box textarea:focus{
-  border-color:#e50914;
+.form-group textarea{
+  min-height:80px;
+  resize:vertical;
 }
 
+/* SUMMARY */
+
 .checkout-summary{
-  margin-top:20px;
+  background:#181818;
   padding:15px;
-  background:#080808;
   border-radius:10px;
-  border:1px solid #222;
+  margin:20px 0;
+}
+
+.checkout-summary h3{
+  margin-bottom:12px;
+}
+
+.summary-item{
+  display:flex;
+  justify-content:space-between;
+  padding:7px 0;
+  color:#ddd;
+}
+
+.checkout-total{
+  border-top:1px solid #333;
+  margin-top:10px;
+  padding-top:12px;
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* PAYMENT */
+
+.payment-box{
+  background:#181818;
+  border:1px solid #333;
+  border-radius:12px;
+  padding:20px;
+  margin:20px 0;
+  text-align:center;
+}
+
+.payment-box h3{
+  margin-bottom:8px;
+}
+
+.payment-box p{
+  color:#bbb;
+  margin:6px 0;
+}
+
+/* TAP TO PAY */
+
+.tap-pay-btn{
+  width:100%;
+  padding:16px;
+  margin:15px 0;
+  border:0;
+  border-radius:10px;
+  background:#e50914;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:
+    0 0 20px rgba(229,9,20,.25);
+}
+
+.tap-pay-btn:active{
+  transform:scale(.98);
+}
+
+/* QR */
+
+#upiQr{
+  width:230px;
+  height:230px;
+  max-width:100%;
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  margin:15px auto;
+  display:block;
+}
+
+.qr-amount{
+  color:#e50914 !important;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.pay-confirm-btn{
+  width:100%;
+  padding:13px;
+  margin-top:10px;
+  border:0;
+  border-radius:9px;
+  background:#222;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:35px;
+  color:#777;
+  border-top:1px solid #222;
+  margin-top:30px;
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .benefits{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  h1{
-    font-size:55px;
-  }
-}
-
 @media(max-width:600px){
-  header{
-    padding:0 4%;
-  }
 
-  nav{
-    display:none;
-  }
-
-  .logo{
-    font-size:21px;
-  }
-
-  .cartButton{
-    font-size:12px;
-    padding:9px 11px;
+  .hero h1{
+    font-size:36px;
   }
 
   .hero{
-    min-height:500px;
-    padding:60px 6%;
+    padding:50px 15px;
   }
 
-  h1{
-    font-size:43px;
+  .products{
+    padding:30px 15px;
   }
 
-  .hero p{
-    font-size:16px;
+  .cart-box,
+  .checkout-box{
+    margin:10px auto;
   }
 
-  .features{
-    flex-wrap:wrap;
-    gap:15px;
-  }
-
-  .products,
-  .benefits{
-    grid-template-columns:1fr;
-  }
-
-  footer{
-    grid-template-columns:1fr;
-  }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
 <header>
 
   <div class="logo">
-    WAR <span>SOUND</span>
+    WAR SOUND
   </div>
 
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#shop">SHOP</a>
-    <a href="#about">ABOUT</a>
-    <a href="#support">SUPPORT</a>
-  </nav>
+  <button
+    class="cartButton"
+    onclick="showCart()">
 
-  <button class="cartButton" onclick="showCart()">
-    🛒 CART (<span id="cartCount">0</span>)
+    🛒 CART
+    (<span id="cartCount">0</span>)
+
   </button>
 
 </header>
@@ -513,343 +444,530 @@ footer a{
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section class="hero">
 
-  <div class="hero-text">
+  <h1>WAR SOUND</h1>
 
-    <div class="small">WAR SOUND</div>
-
-    <h1>
-      POWER<br>
-      <span>YOUR SOUND</span>
-    </h1>
-
-    <p>
-      Premium earphones and earbuds built for
-      powerful sound, deep bass and an immersive
-      listening experience.
-    </p>
-
-    <a class="btn" href="#shop">
-      SHOP EARPHONES →
-    </a>
-
-    <div class="features">
-      <div class="feature">🔊 DEEP BASS</div>
-      <div class="feature">⚡ LOW LATENCY</div>
-      <div class="feature">☎ CLEAR CALLS</div>
-    </div>
-
-  </div>
+  <p>
+    Premium Audio. Powerful Sound.
+  </p>
 
 </section>
 
 
 <!-- PRODUCTS -->
 
-<section id="shop">
-
-  <div class="title">
-    <small>FEATURED</small>
-    <h2>BEST OF WAR SOUND</h2>
-  </div>
-
-  <div class="products">
+<section class="products">
 
 
-    <div class="card">
+  <!-- X1 -->
 
-      <div class="product-img">
-        <div class="emoji">🎧</div>
-      </div>
+  <div class="product">
 
-      <h3>WAR SOUND X1</h3>
+    <div
+      style="
+      height:210px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:70px;">
 
-      <p>Deep Bass. Strong Build.</p>
-
-      <div class="price">₹699</div>
-
-      <button class="cart"
-        onclick="addCart('WAR SOUND X1',699)">
-        🛒 ADD TO CART
-      </button>
+      🎧
 
     </div>
 
+    <h2>
+      WAR SOUND X1
+    </h2>
 
-    <div class="card">
-
-      <div class="product-img">
-        <img src="./ic_launcher.png"
-             alt="WAR SOUND T20">
-      </div>
-
-      <h3>WAR SOUND T20</h3>
-
-      <p>Powerful sound for everyday use.</p>
-
-      <div class="price">₹999</div>
-
-      <button class="cart"
-        onclick="addCart('WAR SOUND T20',999)">
-        🛒 ADD TO CART
-      </button>
-
+    <div class="price">
+      ₹699
     </div>
 
+    <button
+      class="add-btn"
+      onclick="addCart('WAR SOUND X1',699)">
 
-    <div class="card">
+      ADD TO CART
 
-      <div class="product-img">
-        <div class="emoji">🎧</div>
-      </div>
-
-      <h3>WAR SOUND PRO</h3>
-
-      <p>True Wireless. Total Freedom.</p>
-
-      <div class="price">₹1,499</div>
-
-      <button class="cart"
-        onclick="addCart('WAR SOUND PRO',1499)">
-        🛒 ADD TO CART
-      </button>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="product-img">
-        <div class="emoji">🎧</div>
-      </div>
-
-      <h3>WAR SOUND BUDS</h3>
-
-      <p>Game Mode. Be the Best.</p>
-
-      <div class="price">₹1,199</div>
-
-      <button class="cart"
-        onclick="addCart('WAR SOUND BUDS',1199)">
-        🛒 ADD TO CART
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- BENEFITS -->
-
-<section class="benefits" id="about">
-
-  <div class="benefit">
-    <div class="icon">〰️</div>
-    <h3>PURE SOUND</h3>
-    <p>Clear and powerful audio experience.</p>
-  </div>
-
-  <div class="benefit">
-    <div class="icon">🛡️</div>
-    <h3>BUILT TO LAST</h3>
-    <p>Strong build quality for everyday use.</p>
-  </div>
-
-  <div class="benefit">
-    <div class="icon">🎧</div>
-    <h3>COMFORT FIT</h3>
-    <p>Designed for comfortable listening.</p>
-  </div>
-
-  <div class="benefit">
-    <div class="icon">✓</div>
-    <h3>WARRANTY</h3>
-    <p>Product warranty and support.</p>
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer id="support">
-
-  <div>
-    <h2>WAR <span>SOUND</span></h2>
-    <p>
-      Premium audio products built for people
-      who live for powerful sound.
-    </p>
-  </div>
-
-  <div>
-    <h3>QUICK LINKS</h3>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#about">About Us</a>
-  </div>
-
-  <div>
-    <h3>SUPPORT</h3>
-    <a href="#">Track Order</a>
-    <a href="#">Shipping Policy</a>
-    <a href="#">Return Policy</a>
-    <a href="#">Contact Us</a>
-  </div>
-
-</footer>
-
-<div class="copy">
-  © 2026 WAR SOUND. All Rights Reserved.
-</div>
-
-
-<!-- CART POPUP -->
-
-<div id="cartPopup" class="cart-popup">
-
-  <div class="cart-box">
-
-    <div class="cart-header">
-      <h2>🛒 Your Cart</h2>
-
-      <button class="close-cart"
-        onclick="closeCart()">×</button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-      <span>Total</span>
-      <span>₹<span id="cartTotal">0</span></span>
-    </div>
-
-    <button class="checkout-btn"
-      onclick="openCheckout()">
-      CHECKOUT
     </button>
 
   </div>
 
-</div>
 
+  <!-- T20 -->
 
-<!-- CHECKOUT POPUP -->
+  <div class="product">
 
-<div id="checkoutPopup" class="checkout-popup">
+    <img
+      src="./ic_launcher.png"
+      alt="WAR SOUND T20"
+      onerror="this.style.display='none';">
 
-  <div class="checkout-box">
+    <h2>
+      WAR SOUND T20
+    </h2>
 
-    <div class="checkout-header">
-      <h2>CHECKOUT</h2>
-
-      <button class="checkout-close"
-        onclick="closeCheckout()">×</button>
+    <div class="price">
+      ₹999
     </div>
 
-    <form id="checkoutForm">
+    <button
+      class="add-btn"
+      onclick="addCart('WAR SOUND T20',999)">
 
-      <label>Full Name</label>
-      <input
-        type="text"
-        id="customerName"
-        placeholder="Enter your name"
-        required>
+      ADD TO CART
 
-      <label>Mobile Number</label>
-      <input
-        type="tel"
-        id="customerPhone"
-        placeholder="10 digit mobile number"
-        inputmode="numeric"
-        pattern="[0-9]{10}"
-        maxlength="10"
-        required>
+    </button>
 
-      <label>Delivery Address</label>
-      <textarea
-        id="customerAddress"
-        rows="3"
-        placeholder="House / Street / Area"
-        required></textarea>
+  </div>
 
-      <label>City</label>
-      <input
-        type="text"
-        id="customerCity"
-        placeholder="Enter city"
-        required>
 
-      <label>PIN Code</label>
-      <input
-        type="text"
-        id="customerPin"
-        placeholder="6 digit PIN code"
-        inputmode="numeric"
-        pattern="[0-9]{6}"
-        maxlength="6"
-        required>
+  <!-- PRO -->
 
-      <div class="checkout-summary">
+  <div class="product">
 
-        <h3>Order Summary</h3>
+    <div
+      style="
+      height:210px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:70px;">
 
-        <div id="checkoutItems"></div>
+      🎧
 
-        <div class="checkout-total">
-          <span>Total</span>
-          <span>₹<span id="checkoutTotal">0</span></span>
-        </div>
+    </div>
 
-      </div>
+    <h2>
+      WAR SOUND PRO
+    </h2>
 
-      <button type="submit"
-        class="place-order">
-        PLACE ORDER
+    <div class="price">
+      ₹1,499
+    </div>
+
+    <button
+      class="add-btn"
+      onclick="addCart('WAR SOUND PRO',1499)">
+
+      ADD TO CART
+
+    </button>
+
+  </div>
+
+
+  <!-- BUDS -->
+
+  <div class="product">
+
+    <div
+      style="
+      height:210px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:70px;">
+
+      🎵
+
+    </div>
+
+    <h2>
+      WAR SOUND BUDS
+    </h2>
+
+    <div class="price">
+      ₹1,199
+    </div>
+
+    <button
+      class="add-btn"
+      onclick="addCart('WAR SOUND BUDS',1199)">
+
+      ADD TO CART
+
+    </button>
+
+  </div>
+
+
+</section>
+
+
+<!-- CART -->
+
+<div
+  id="cartPopup"
+  class="cart-popup">
+
+
+  <div class="cart-box">
+
+
+    <div class="cart-header">
+
+      <h2>
+        🛒 YOUR CART
+      </h2>
+
+      <button
+        class="close-btn"
+        onclick="closeCart()">
+
+        ×
+
       </button>
 
-    </form>
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="cart-total">
+
+      <span>
+        Total
+      </span>
+
+      <span>
+        ₹<span id="cartTotal">0</span>
+      </span>
+
+    </div>
+
+
+    <button
+      class="checkout-btn"
+      onclick="openCheckout()">
+
+      CHECKOUT
+
+    </button>
+
 
   </div>
 
 </div>
 
 
-<!-- JAVASCRIPT -->
+<!-- CHECKOUT -->
+
+<div
+  id="checkoutPopup"
+  class="checkout-popup">
+
+
+  <div class="checkout-box">
+
+
+    <div class="checkout-header">
+
+      <h2>
+        CHECKOUT
+      </h2>
+
+      <button
+        class="checkout-close"
+        onclick="closeCheckout()">
+
+        ×
+
+      </button>
+
+    </div>
+
+
+    <form id="checkoutForm">
+
+
+      <!-- NAME -->
+
+      <div class="form-group">
+
+        <label>
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Enter your name"
+          required>
+
+      </div>
+
+
+      <!-- MOBILE -->
+
+      <div class="form-group">
+
+        <label>
+          Mobile Number
+        </label>
+
+        <input
+          type="tel"
+          id="customerMobile"
+          placeholder="Enter mobile number"
+          maxlength="10"
+          required>
+
+      </div>
+
+
+      <!-- ADDRESS -->
+
+      <div class="form-group">
+
+        <label>
+          Address
+        </label>
+
+        <textarea
+          id="customerAddress"
+          placeholder="Enter complete address"
+          required></textarea>
+
+      </div>
+
+
+      <!-- CITY -->
+
+      <div class="form-group">
+
+        <label>
+          City
+        </label>
+
+        <input
+          type="text"
+          id="customerCity"
+          placeholder="Enter city"
+          required>
+
+      </div>
+
+
+      <!-- PIN -->
+
+      <div class="form-group">
+
+        <label>
+          PIN Code
+        </label>
+
+        <input
+          type="number"
+          id="customerPin"
+          placeholder="Enter PIN code"
+          maxlength="6"
+          required>
+
+      </div>
+
+
+      <!-- ORDER SUMMARY -->
+
+      <div class="checkout-summary">
+
+        <h3>
+          📦 Order Summary
+        </h3>
+
+        <div id="checkoutItems"></div>
+
+        <div class="checkout-total">
+
+          <span>
+            Total
+          </span>
+
+          <span>
+            ₹<span id="checkoutTotal">0</span>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PAYMENT -->
+
+      <div class="payment-box">
+
+
+        <h3>
+          💳 PAY NOW
+        </h3>
+
+        <p>
+          Amount to pay
+        </p>
+
+
+        <p class="qr-amount">
+          ₹<span id="qrAmount">0</span>
+        </p>
+
+
+        <!-- TAP TO PAY -->
+
+        <button
+          type="button"
+          class="tap-pay-btn"
+          onclick="tapToPay()">
+
+          📱 TAP TO PAY
+
+        </button>
+
+
+        <p>
+          Tap to open your UPI payment app
+        </p>
+
+
+        <!-- QR -->
+
+        <h3 style="margin-top:20px;">
+
+          OR SCAN QR
+
+        </h3>
+
+
+        <img
+          id="upiQr"
+          src=""
+          alt="Dynamic UPI QR">
+
+
+        <p>
+          UPI ID:
+          <strong>
+            patildipali1919@ibl
+          </strong>
+        </p>
+
+
+        <!-- PAID -->
+
+        <button
+          type="button"
+          class="pay-confirm-btn"
+          onclick="confirmPayment()">
+
+          ✅ I HAVE PAID
+
+        </button>
+
+
+        <p
+          id="paymentStatus"
+          style="
+          color:#777;
+          font-size:13px;
+          margin-top:10px;">
+
+          Payment not confirmed
+
+        </p>
+
+
+      </div>
+
+
+      <!-- PLACE ORDER -->
+
+      <button
+        type="submit"
+        class="place-order">
+
+        PLACE ORDER
+
+      </button>
+
+
+    </form>
+
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  © 2026 WAR SOUND — Premium Audio
+
+</footer>
+
 
 <script>
 
+
+/* =========================
+   UPI SETTINGS
+========================= */
+
+const UPI_ID =
+  "patildipali1919@ibl";
+
+const UPI_NAME =
+  "WAR SOUND";
+
+
+/* =========================
+   CART
+========================= */
+
 let cart = [];
 
+let paymentConfirmed = false;
 
-/* ADD TO CART */
+
+/* ADD */
 
 function addCart(name,price){
 
-  let item = cart.find(
-    product => product.name === name
-  );
+  const existing =
+    cart.find(
+      item => item.name === name
+    );
 
-  if(item){
 
-    item.qty++;
+  if(existing){
 
-  }else{
+    existing.qty++;
+
+  }
+
+  else{
 
     cart.push({
+
       name:name,
+
       price:price,
+
       qty:1
+
     });
 
   }
 
+
   updateCart();
 
-  showCart();
+
+  alert(
+    name +
+    " added to cart!"
+  );
+
 }
 
 
@@ -860,6 +978,7 @@ function increaseQty(index){
   cart[index].qty++;
 
   updateCart();
+
 }
 
 
@@ -867,17 +986,23 @@ function increaseQty(index){
 
 function decreaseQty(index){
 
-  if(cart[index].qty > 1){
+  if(
+    cart[index].qty > 1
+  ){
 
     cart[index].qty--;
 
-  }else{
+  }
+
+  else{
 
     cart.splice(index,1);
 
   }
 
+
   updateCart();
+
 }
 
 
@@ -888,179 +1013,265 @@ function removeItem(index){
   cart.splice(index,1);
 
   updateCart();
+
 }
 
 
-/* UPDATE CART */
+/* TOTAL */
+
+function getTotal(){
+
+  return cart.reduce(
+
+    (total,item) =>
+
+      total +
+      (
+        item.price *
+        item.qty
+      ),
+
+    0
+
+  );
+
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
 
 function updateCart(){
 
-  const cartItems =
-    document.getElementById("cartItems");
+  let totalQty = 0;
 
-  const cartTotal =
-    document.getElementById("cartTotal");
 
-  const cartCount =
-    document.getElementById("cartCount");
+  cart.forEach(item => {
 
-  let total = 0;
-  let count = 0;
+    totalQty += item.qty;
+
+  });
+
+
+  document.getElementById(
+    "cartCount"
+  ).innerText =
+    totalQty;
+
+
+  document.getElementById(
+    "cartTotal"
+  ).innerText =
+    getTotal()
+    .toLocaleString("en-IN");
+
+
+  let html = "";
+
 
   if(cart.length === 0){
 
-    cartItems.innerHTML =
-      '<div class="empty-cart">Your cart is empty 🛒</div>';
+    html = `
 
-  }else{
+      <p
+        style="
+        text-align:center;
+        color:#888;
+        padding:30px;">
 
-    cartItems.innerHTML = "";
+        Your cart is empty.
 
-    cart.forEach((item,index)=>{
+      </p>
 
-      total += item.price * item.qty;
-
-      count += item.qty;
-
-      cartItems.innerHTML += `
-
-        <div class="cart-item">
-
-          <div>
-
-            <div class="cart-item-name">
-              ${item.name}
-            </div>
-
-            <div class="cart-item-price">
-              ₹${item.price} × ${item.qty}
-            </div>
-
-          </div>
-
-          <div class="quantity">
-
-            <button
-              onclick="decreaseQty(${index})">
-              −
-            </button>
-
-            <span>${item.qty}</span>
-
-            <button
-              onclick="increaseQty(${index})">
-              +
-            </button>
-
-          </div>
-
-          <button
-            class="remove-btn"
-            onclick="removeItem(${index})">
-            Remove
-          </button>
-
-        </div>
-
-      `;
-
-    });
+    `;
 
   }
 
-  cartTotal.innerText = total;
+  else{
 
-  cartCount.innerText = count;
+    cart.forEach(
+      (item,index) => {
+
+        html += `
+
+          <div class="cart-item">
+
+            <div class="cart-info">
+
+              <h3>
+                ${item.name}
+              </h3>
+
+              <p>
+                ₹${item.price
+                .toLocaleString("en-IN")}
+              </p>
+
+            </div>
+
+
+            <div class="qty">
+
+              <button
+                onclick="decreaseQty(${index})">
+
+                −
+
+              </button>
+
+
+              <span>
+                ${item.qty}
+              </span>
+
+
+              <button
+                onclick="increaseQty(${index})">
+
+                +
+
+              </button>
+
+            </div>
+
+
+            <button
+              class="remove-btn"
+              onclick="removeItem(${index})">
+
+              ✕
+
+            </button>
+
+          </div>
+
+        `;
+
+      }
+    );
+
+  }
+
+
+  document.getElementById(
+    "cartItems"
+  ).innerHTML =
+    html;
+
 }
 
 
-/* OPEN CART */
+/* =========================
+   CART POPUP
+========================= */
 
 function showCart(){
 
-  document.getElementById("cartPopup")
-    .style.display = "flex";
+  updateCart();
+
+  document.getElementById(
+    "cartPopup"
+  ).style.display =
+    "block";
 
 }
 
-
-/* CLOSE CART */
 
 function closeCart(){
 
-  document.getElementById("cartPopup")
-    .style.display = "none";
+  document.getElementById(
+    "cartPopup"
+  ).style.display =
+    "none";
 
 }
 
 
-/* OPEN CHECKOUT */
+/* =========================
+   CHECKOUT
+========================= */
 
 function openCheckout(){
 
   if(cart.length === 0){
 
-    alert("Your cart is empty 🛒");
+    alert(
+      "Your cart is empty!"
+    );
 
     return;
 
   }
 
+
+  closeCart();
+
+
+  paymentConfirmed =
+    false;
+
+
   updateCheckout();
 
-  document.getElementById("cartPopup")
-    .style.display = "none";
 
-  document.getElementById("checkoutPopup")
-    .style.display = "flex";
+  document.getElementById(
+    "checkoutPopup"
+  ).style.display =
+    "block";
+
+
+  document.getElementById(
+    "paymentStatus"
+  ).innerText =
+    "Payment not confirmed";
 
 }
 
-
-/* CLOSE CHECKOUT */
 
 function closeCheckout(){
 
-  document.getElementById("checkoutPopup")
-    .style.display = "none";
+  document.getElementById(
+    "checkoutPopup"
+  ).style.display =
+    "none";
 
 }
 
 
-/* UPDATE CHECKOUT */
+/* =========================
+   CHECKOUT UPDATE
+========================= */
 
 function updateCheckout(){
 
-  const items =
-    document.getElementById("checkoutItems");
+  let html = "";
 
-  const totalElement =
-    document.getElementById("checkoutTotal");
 
-  let total = 0;
+  cart.forEach(item => {
 
-  items.innerHTML = "";
+    const itemTotal =
+      item.price *
+      item.qty;
 
-  cart.forEach(item=>{
 
-    total += item.price * item.qty;
+    html += `
 
-    items.innerHTML += `
-
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        padding:9px 0;
-        border-bottom:1px solid #222;
-      ">
+      <div class="summary-item">
 
         <span>
-          ${item.name} × ${item.qty}
+
+          ${item.name}
+          × ${item.qty}
+
         </span>
 
-        <strong>
-          ₹${item.price * item.qty}
-        </strong>
+        <span>
+
+          ₹${itemTotal
+          .toLocaleString("en-IN")}
+
+        </span>
 
       </div>
 
@@ -1068,94 +1279,301 @@ function updateCheckout(){
 
   });
 
-  totalElement.innerText = total;
+
+  document.getElementById(
+    "checkoutItems"
+  ).innerHTML =
+    html;
+
+
+  const total =
+    getTotal();
+
+
+  document.getElementById(
+    "checkoutTotal"
+  ).innerText =
+    total.toLocaleString("en-IN");
+
+
+  document.getElementById(
+    "qrAmount"
+  ).innerText =
+    total.toLocaleString("en-IN");
+
+
+  generateUPIQR(total);
+
 }
 
 
-/* PLACE ORDER */
+/* =========================
+   UPI PAYMENT URL
+========================= */
+
+function createUPIURL(amount){
+
+  return (
+
+    "upi://pay" +
+
+    "?pa=" +
+    encodeURIComponent(UPI_ID) +
+
+    "&pn=" +
+    encodeURIComponent(UPI_NAME) +
+
+    "&am=" +
+    encodeURIComponent(
+      amount.toFixed(2)
+    ) +
+
+    "&cu=INR"
+
+  );
+
+}
+
+
+/* =========================
+   DYNAMIC QR
+========================= */
+
+function generateUPIQR(amount){
+
+  const upiURL =
+    createUPIURL(amount);
+
+
+  const qrURL =
+
+    "https://api.qrserver.com/" +
+    "v1/create-qr-code/" +
+
+    "?size=300x300" +
+
+    "&data=" +
+    encodeURIComponent(
+      upiURL
+    );
+
+
+  document.getElementById(
+    "upiQr"
+  ).src =
+    qrURL;
+
+}
+
+
+/* =========================
+   TAP TO PAY
+========================= */
+
+function tapToPay(){
+
+  const total =
+    getTotal();
+
+
+  if(total <= 0){
+
+    alert(
+      "Your cart is empty!"
+    );
+
+    return;
+
+  }
+
+
+  const upiURL =
+    createUPIURL(total);
+
+
+  /*
+    Opens the device's
+    supported UPI handler.
+  */
+
+  window.location.href =
+    upiURL;
+
+}
+
+
+/* =========================
+   PAYMENT CONFIRM
+========================= */
+
+function confirmPayment(){
+
+  paymentConfirmed =
+    true;
+
+
+  document.getElementById(
+    "paymentStatus"
+  ).innerText =
+    "✅ Payment marked as paid";
+
+
+  document.getElementById(
+    "paymentStatus"
+  ).style.color =
+    "#00c853";
+
+
+  alert(
+    "Payment marked as completed.\n\n" +
+    "Your payment will be manually verified."
+  );
+
+}
+
+
+/* =========================
+   PLACE ORDER
+========================= */
 
 document
-  .getElementById("checkoutForm")
-  .addEventListener("submit",function(event){
+.getElementById("checkoutForm")
+.addEventListener(
+  "submit",
+  function(e){
 
-    event.preventDefault();
+    e.preventDefault();
+
 
     if(cart.length === 0){
 
-      alert("Your cart is empty.");
+      alert(
+        "Your cart is empty!"
+      );
 
       return;
 
     }
 
-    const name =
-      document.getElementById("customerName").value;
 
-    const phone =
-      document.getElementById("customerPhone").value;
+    if(!paymentConfirmed){
+
+      alert(
+        "Please complete UPI payment first, " +
+        "then tap 'I HAVE PAID'."
+      );
+
+      return;
+
+    }
+
+
+    const name =
+      document.getElementById(
+        "customerName"
+      ).value;
+
+
+    const mobile =
+      document.getElementById(
+        "customerMobile"
+      ).value;
+
 
     const address =
-      document.getElementById("customerAddress").value;
+      document.getElementById(
+        "customerAddress"
+      ).value;
+
 
     const city =
-      document.getElementById("customerCity").value;
+      document.getElementById(
+        "customerCity"
+      ).value;
+
 
     const pin =
-      document.getElementById("customerPin").value;
+      document.getElementById(
+        "customerPin"
+      ).value;
 
-    let total = 0;
 
-    cart.forEach(item=>{
+    const total =
+      getTotal();
 
-      total += item.price * item.qty;
+
+    let orderText = "";
+
+
+    cart.forEach(item => {
+
+      orderText +=
+
+        item.name +
+        " × " +
+        item.qty +
+        "\n";
 
     });
 
+
     alert(
-      "WAR SOUND ORDER\n\n" +
-      "Name: " + name + "\n" +
-      "Mobile: " + phone + "\n" +
-      "Address: " + address + "\n" +
-      "City: " + city + "\n" +
-      "PIN: " + pin + "\n\n" +
-      "Total: ₹" + total +
-      "\n\nOrder details received!"
+
+      "ORDER RECEIVED! 🎉\n\n" +
+
+      "Customer: " +
+      name +
+      "\n" +
+
+      "Mobile: " +
+      mobile +
+      "\n\n" +
+
+      "Products:\n" +
+      orderText +
+
+      "\nTotal: ₹" +
+      total.toLocaleString(
+        "en-IN"
+      ) +
+
+      "\n\nAddress:\n" +
+
+      address +
+      ", " +
+      city +
+      " - " +
+      pin +
+
+      "\n\nPayment will be verified manually."
+
     );
 
-});
+
+    /* CLEAR */
+
+    cart = [];
+
+    paymentConfirmed =
+      false;
 
 
-/* CLOSE CART OUTSIDE */
+    updateCart();
 
-document
-  .getElementById("cartPopup")
-  .addEventListener("click",function(event){
-
-    if(event.target === this){
-
-      closeCart();
-
-    }
-
-  });
+    closeCheckout();
 
 
-/* CLOSE CHECKOUT OUTSIDE */
+    document
+    .getElementById(
+      "checkoutForm"
+    )
+    .reset();
 
-document
-  .getElementById("checkoutPopup")
-  .addEventListener("click",function(event){
-
-    if(event.target === this){
-
-      closeCheckout();
-
-    }
-
-  });
+  }
+);
 
 
-/* START */
+/* INITIAL */
 
 updateCart();
 
