@@ -1,13 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>WAR SOUND - Premium Audio</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -21,7 +20,6 @@ body{
 }
 
 /* HEADER */
-
 header{
   background:#090909;
   border-bottom:1px solid #222;
@@ -43,7 +41,7 @@ header{
 
 .cartButton{
   background:#e50914;
-  color:white;
+  color:#fff;
   border:0;
   padding:11px 18px;
   border-radius:8px;
@@ -52,17 +50,11 @@ header{
 }
 
 /* HERO */
-
 .hero{
   text-align:center;
   padding:70px 20px;
   background:
-    radial-gradient(
-      circle at center,
-      #350000 0%,
-      #090909 45%,
-      #050505 75%
-    );
+    radial-gradient(circle at center,#350000 0%,#090909 45%,#050505 75%);
 }
 
 .hero h1{
@@ -78,12 +70,10 @@ header{
 }
 
 /* PRODUCTS */
-
 .products{
   padding:45px 5%;
   display:grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
   gap:25px;
 }
 
@@ -99,15 +89,22 @@ header{
 .product:hover{
   transform:translateY(-5px);
   border-color:#e50914;
-  box-shadow:
-    0 0 25px rgba(229,9,20,.25);
+  box-shadow:0 0 25px rgba(229,9,20,.25);
 }
 
-.product img{
+.product-img{
   width:100%;
   height:210px;
   object-fit:contain;
   margin-bottom:15px;
+}
+
+.fake-img{
+  height:210px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
 }
 
 .product h2{
@@ -133,7 +130,6 @@ header{
 }
 
 /* POPUPS */
-
 .cart-popup,
 .checkout-popup{
   display:none;
@@ -154,12 +150,10 @@ header{
   border:1px solid #333;
   border-radius:15px;
   padding:20px;
-  box-shadow:
-    0 0 40px rgba(229,9,20,.2);
+  box-shadow:0 0 40px rgba(229,9,20,.2);
 }
 
 /* HEADERS */
-
 .cart-header,
 .checkout-header{
   display:flex;
@@ -179,8 +173,7 @@ header{
   cursor:pointer;
 }
 
-/* CART ITEMS */
-
+/* CART */
 .cart-item{
   display:flex;
   justify-content:space-between;
@@ -229,8 +222,6 @@ header{
   cursor:pointer;
 }
 
-/* TOTAL */
-
 .cart-total{
   display:flex;
   justify-content:space-between;
@@ -252,7 +243,14 @@ header{
   cursor:pointer;
 }
 
-/* FORM */
+/* DELIVERY DETAILS */
+.section-title{
+  color:#e50914;
+  font-size:18px;
+  margin:20px 0 15px;
+  border-bottom:1px solid #333;
+  padding-bottom:10px;
+}
 
 .form-group{
   margin-bottom:15px;
@@ -280,8 +278,7 @@ header{
   resize:vertical;
 }
 
-/* SUMMARY */
-
+/* ORDER SUMMARY */
 .checkout-summary{
   background:#181818;
   padding:15px;
@@ -296,6 +293,7 @@ header{
 .summary-item{
   display:flex;
   justify-content:space-between;
+  gap:10px;
   padding:7px 0;
   color:#ddd;
 }
@@ -311,7 +309,6 @@ header{
 }
 
 /* PAYMENT */
-
 .payment-box{
   background:#181818;
   border:1px solid #333;
@@ -330,8 +327,13 @@ header{
   margin:6px 0;
 }
 
-/* TAP TO PAY */
+.payment-amount{
+  color:#e50914 !important;
+  font-size:25px;
+  font-weight:bold;
+}
 
+/* TAP TO PAY */
 .tap-pay-btn{
   width:100%;
   padding:16px;
@@ -343,8 +345,7 @@ header{
   font-size:18px;
   font-weight:bold;
   cursor:pointer;
-  box-shadow:
-    0 0 20px rgba(229,9,20,.25);
+  box-shadow:0 0 20px rgba(229,9,20,.25);
 }
 
 .tap-pay-btn:active{
@@ -352,7 +353,6 @@ header{
 }
 
 /* QR */
-
 #upiQr{
   width:230px;
   height:230px;
@@ -362,12 +362,6 @@ header{
   border-radius:10px;
   margin:15px auto;
   display:block;
-}
-
-.qr-amount{
-  color:#e50914 !important;
-  font-size:25px;
-  font-weight:bold;
 }
 
 .pay-confirm-btn{
@@ -382,8 +376,13 @@ header{
   cursor:pointer;
 }
 
-/* FOOTER */
+#paymentStatus{
+  color:#777;
+  font-size:13px;
+  margin-top:10px;
+}
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:35px;
@@ -391,8 +390,6 @@ footer{
   border-top:1px solid #222;
   margin-top:30px;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
 
@@ -413,72 +410,50 @@ footer{
     margin:10px auto;
   }
 
+  .cart-item{
+    flex-wrap:wrap;
+  }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
 <!-- HEADER -->
-
 <header>
 
   <div class="logo">
     WAR SOUND
   </div>
 
-  <button
-    class="cartButton"
-    onclick="showCart()">
-
-    🛒 CART
-    (<span id="cartCount">0</span>)
-
+  <button class="cartButton" onclick="showCart()">
+    🛒 CART (<span id="cartCount">0</span>)
   </button>
 
 </header>
 
 
 <!-- HERO -->
-
 <section class="hero">
 
   <h1>WAR SOUND</h1>
 
-  <p>
-    Premium Audio. Powerful Sound.
-  </p>
+  <p>Premium Audio. Powerful Sound.</p>
 
 </section>
 
 
 <!-- PRODUCTS -->
-
 <section class="products">
 
-
   <!-- X1 -->
-
   <div class="product">
 
-    <div
-      style="
-      height:210px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:70px;">
-
+    <div class="fake-img">
       🎧
-
     </div>
 
-    <h2>
-      WAR SOUND X1
-    </h2>
+    <h2>WAR SOUND X1</h2>
 
     <div class="price">
       ₹699
@@ -487,26 +462,21 @@ footer{
     <button
       class="add-btn"
       onclick="addCart('WAR SOUND X1',699)">
-
       ADD TO CART
-
     </button>
 
   </div>
 
 
   <!-- T20 -->
-
   <div class="product">
 
     <img
+      class="product-img"
       src="./ic_launcher.png"
-      alt="WAR SOUND T20"
-      onerror="this.style.display='none';">
+      alt="WAR SOUND T20">
 
-    <h2>
-      WAR SOUND T20
-    </h2>
+    <h2>WAR SOUND T20</h2>
 
     <div class="price">
       ₹999
@@ -515,33 +485,20 @@ footer{
     <button
       class="add-btn"
       onclick="addCart('WAR SOUND T20',999)">
-
       ADD TO CART
-
     </button>
 
   </div>
 
 
   <!-- PRO -->
-
   <div class="product">
 
-    <div
-      style="
-      height:210px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:70px;">
-
+    <div class="fake-img">
       🎧
-
     </div>
 
-    <h2>
-      WAR SOUND PRO
-    </h2>
+    <h2>WAR SOUND PRO</h2>
 
     <div class="price">
       ₹1,499
@@ -550,33 +507,20 @@ footer{
     <button
       class="add-btn"
       onclick="addCart('WAR SOUND PRO',1499)">
-
       ADD TO CART
-
     </button>
 
   </div>
 
 
   <!-- BUDS -->
-
   <div class="product">
 
-    <div
-      style="
-      height:210px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:70px;">
-
+    <div class="fake-img">
       🎵
-
     </div>
 
-    <h2>
-      WAR SOUND BUDS
-    </h2>
+    <h2>WAR SOUND BUDS</h2>
 
     <div class="price">
       ₹1,199
@@ -585,59 +529,45 @@ footer{
     <button
       class="add-btn"
       onclick="addCart('WAR SOUND BUDS',1199)">
-
       ADD TO CART
-
     </button>
 
   </div>
 
-
 </section>
 
 
-<!-- CART -->
+<!-- =========================
+     CART POPUP
+========================= -->
 
-<div
-  id="cartPopup"
-  class="cart-popup">
-
+<div id="cartPopup" class="cart-popup">
 
   <div class="cart-box">
 
-
     <div class="cart-header">
 
-      <h2>
-        🛒 YOUR CART
-      </h2>
+      <h2>🛒 YOUR CART</h2>
 
       <button
         class="close-btn"
         onclick="closeCart()">
-
         ×
-
       </button>
 
     </div>
 
-
     <div id="cartItems"></div>
-
 
     <div class="cart-total">
 
-      <span>
-        Total
-      </span>
+      <span>Total</span>
 
       <span>
         ₹<span id="cartTotal">0</span>
       </span>
 
     </div>
-
 
     <button
       class="checkout-btn"
@@ -647,34 +577,27 @@ footer{
 
     </button>
 
-
   </div>
 
 </div>
 
 
-<!-- CHECKOUT -->
+<!-- =========================
+     CHECKOUT POPUP
+========================= -->
 
-<div
-  id="checkoutPopup"
-  class="checkout-popup">
-
+<div id="checkoutPopup" class="checkout-popup">
 
   <div class="checkout-box">
 
-
     <div class="checkout-header">
 
-      <h2>
-        CHECKOUT
-      </h2>
+      <h2>CHECKOUT</h2>
 
       <button
         class="checkout-close"
         onclick="closeCheckout()">
-
         ×
-
       </button>
 
     </div>
@@ -683,13 +606,15 @@ footer{
     <form id="checkoutForm">
 
 
-      <!-- NAME -->
+      <!-- DELIVERY DETAILS -->
+      <div class="section-title">
+        📦 DELIVERY DETAILS
+      </div>
+
 
       <div class="form-group">
 
-        <label>
-          Full Name
-        </label>
+        <label>Full Name</label>
 
         <input
           type="text"
@@ -700,47 +625,36 @@ footer{
       </div>
 
 
-      <!-- MOBILE -->
-
       <div class="form-group">
 
-        <label>
-          Mobile Number
-        </label>
+        <label>Mobile Number</label>
 
         <input
           type="tel"
           id="customerMobile"
-          placeholder="Enter mobile number"
+          placeholder="Enter 10 digit mobile number"
           maxlength="10"
+          pattern="[0-9]{10}"
           required>
 
       </div>
 
 
-      <!-- ADDRESS -->
-
       <div class="form-group">
 
-        <label>
-          Address
-        </label>
+        <label>Address</label>
 
         <textarea
           id="customerAddress"
-          placeholder="Enter complete address"
+          placeholder="Enter complete delivery address"
           required></textarea>
 
       </div>
 
 
-      <!-- CITY -->
-
       <div class="form-group">
 
-        <label>
-          City
-        </label>
+        <label>City</label>
 
         <input
           type="text"
@@ -751,39 +665,31 @@ footer{
       </div>
 
 
-      <!-- PIN -->
-
       <div class="form-group">
 
-        <label>
-          PIN Code
-        </label>
+        <label>PIN Code</label>
 
         <input
-          type="number"
+          type="text"
           id="customerPin"
-          placeholder="Enter PIN code"
+          placeholder="Enter 6 digit PIN"
           maxlength="6"
+          pattern="[0-9]{6}"
           required>
 
       </div>
 
 
       <!-- ORDER SUMMARY -->
-
       <div class="checkout-summary">
 
-        <h3>
-          📦 Order Summary
-        </h3>
+        <h3>🧾 ORDER SUMMARY</h3>
 
         <div id="checkoutItems"></div>
 
         <div class="checkout-total">
 
-          <span>
-            Total
-          </span>
+          <span>Total</span>
 
           <span>
             ₹<span id="checkoutTotal">0</span>
@@ -794,27 +700,28 @@ footer{
       </div>
 
 
-      <!-- PAYMENT -->
+      <!-- PAYMENT COMES AFTER DELIVERY DETAILS -->
+      <div class="section-title">
+        💳 PAYMENT OPTION
+      </div>
+
 
       <div class="payment-box">
 
-
         <h3>
-          💳 PAY NOW
+          PAY SECURELY VIA UPI
         </h3>
 
         <p>
-          Amount to pay
+          Amount to Pay
         </p>
 
-
-        <p class="qr-amount">
+        <p class="payment-amount">
           ₹<span id="qrAmount">0</span>
         </p>
 
 
         <!-- TAP TO PAY -->
-
         <button
           type="button"
           class="tap-pay-btn"
@@ -824,37 +731,35 @@ footer{
 
         </button>
 
-
         <p>
-          Tap to open your UPI payment app
+          Tap to open your supported UPI app
         </p>
 
 
-        <!-- QR -->
+        <div
+          style="
+          margin:20px 0;
+          border-top:1px solid #333;
+          padding-top:20px;">
 
-        <h3 style="margin-top:20px;">
+          <h3>
+            OR SCAN QR CODE
+          </h3>
 
-          OR SCAN QR
+          <img
+            id="upiQr"
+            src=""
+            alt="Dynamic UPI QR">
 
-        </h3>
+          <p>
+            UPI ID:
+            <strong>patildipali1919@ibl</strong>
+          </p>
 
-
-        <img
-          id="upiQr"
-          src=""
-          alt="Dynamic UPI QR">
-
-
-        <p>
-          UPI ID:
-          <strong>
-            patildipali1919@ibl
-          </strong>
-        </p>
+        </div>
 
 
-        <!-- PAID -->
-
+        <!-- PAID BUTTON -->
         <button
           type="button"
           class="pay-confirm-btn"
@@ -865,23 +770,14 @@ footer{
         </button>
 
 
-        <p
-          id="paymentStatus"
-          style="
-          color:#777;
-          font-size:13px;
-          margin-top:10px;">
-
+        <p id="paymentStatus">
           Payment not confirmed
-
         </p>
-
 
       </div>
 
 
       <!-- PLACE ORDER -->
-
       <button
         type="submit"
         class="place-order">
@@ -890,9 +786,7 @@ footer{
 
       </button>
 
-
     </form>
-
 
   </div>
 
@@ -900,24 +794,18 @@ footer{
 
 
 <footer>
-
   © 2026 WAR SOUND — Premium Audio
-
 </footer>
 
 
 <script>
 
-
 /* =========================
    UPI SETTINGS
 ========================= */
 
-const UPI_ID =
-  "patildipali1919@ibl";
-
-const UPI_NAME =
-  "WAR SOUND";
+const UPI_ID = "patildipali1919@ibl";
+const UPI_NAME = "WAR SOUND";
 
 
 /* =========================
@@ -925,54 +813,37 @@ const UPI_NAME =
 ========================= */
 
 let cart = [];
-
 let paymentConfirmed = false;
 
 
-/* ADD */
-
-function addCart(name,price){
+/* ADD TO CART */
+function addCart(name, price){
 
   const existing =
-    cart.find(
-      item => item.name === name
-    );
-
+    cart.find(item => item.name === name);
 
   if(existing){
 
     existing.qty++;
 
-  }
-
-  else{
+  }else{
 
     cart.push({
-
       name:name,
-
       price:price,
-
       qty:1
-
     });
 
   }
 
-
   updateCart();
 
-
-  alert(
-    name +
-    " added to cart!"
-  );
+  alert(name + " added to cart!");
 
 }
 
 
 /* INCREASE */
-
 function increaseQty(index){
 
   cart[index].qty++;
@@ -983,23 +854,17 @@ function increaseQty(index){
 
 
 /* DECREASE */
-
 function decreaseQty(index){
 
-  if(
-    cart[index].qty > 1
-  ){
+  if(cart[index].qty > 1){
 
     cart[index].qty--;
 
-  }
-
-  else{
+  }else{
 
     cart.splice(index,1);
 
   }
-
 
   updateCart();
 
@@ -1007,7 +872,6 @@ function decreaseQty(index){
 
 
 /* REMOVE */
-
 function removeItem(index){
 
   cart.splice(index,1);
@@ -1018,21 +882,12 @@ function removeItem(index){
 
 
 /* TOTAL */
-
 function getTotal(){
 
   return cart.reduce(
-
     (total,item) =>
-
-      total +
-      (
-        item.price *
-        item.qty
-      ),
-
+      total + (item.price * item.qty),
     0
-
   );
 
 }
@@ -1046,25 +901,17 @@ function updateCart(){
 
   let totalQty = 0;
 
-
   cart.forEach(item => {
-
     totalQty += item.qty;
-
   });
 
 
-  document.getElementById(
-    "cartCount"
-  ).innerText =
+  document.getElementById("cartCount").innerText =
     totalQty;
 
 
-  document.getElementById(
-    "cartTotal"
-  ).innerText =
-    getTotal()
-    .toLocaleString("en-IN");
+  document.getElementById("cartTotal").innerText =
+    getTotal().toLocaleString("en-IN");
 
 
   let html = "";
@@ -1073,90 +920,66 @@ function updateCart(){
   if(cart.length === 0){
 
     html = `
-
-      <p
-        style="
+      <p style="
         text-align:center;
         color:#888;
         padding:30px;">
-
         Your cart is empty.
-
       </p>
-
     `;
 
-  }
+  }else{
 
-  else{
+    cart.forEach((item,index) => {
 
-    cart.forEach(
-      (item,index) => {
+      html += `
 
-        html += `
+        <div class="cart-item">
 
-          <div class="cart-item">
+          <div class="cart-info">
 
-            <div class="cart-info">
+            <h3>${item.name}</h3>
 
-              <h3>
-                ${item.name}
-              </h3>
+            <p>
+              ₹${item.price.toLocaleString("en-IN")}
+            </p>
 
-              <p>
-                ₹${item.price
-                .toLocaleString("en-IN")}
-              </p>
+          </div>
 
-            </div>
-
-
-            <div class="qty">
-
-              <button
-                onclick="decreaseQty(${index})">
-
-                −
-
-              </button>
-
-
-              <span>
-                ${item.qty}
-              </span>
-
-
-              <button
-                onclick="increaseQty(${index})">
-
-                +
-
-              </button>
-
-            </div>
-
+          <div class="qty">
 
             <button
-              class="remove-btn"
-              onclick="removeItem(${index})">
+              onclick="decreaseQty(${index})">
+              −
+            </button>
 
-              ✕
+            <span>
+              ${item.qty}
+            </span>
 
+            <button
+              onclick="increaseQty(${index})">
+              +
             </button>
 
           </div>
 
-        `;
+          <button
+            class="remove-btn"
+            onclick="removeItem(${index})">
+            ✕
+          </button>
 
-      }
-    );
+        </div>
+
+      `;
+
+    });
 
   }
 
 
-  document.getElementById(
-    "cartItems"
-  ).innerHTML =
+  document.getElementById("cartItems").innerHTML =
     html;
 
 }
@@ -1170,9 +993,7 @@ function showCart(){
 
   updateCart();
 
-  document.getElementById(
-    "cartPopup"
-  ).style.display =
+  document.getElementById("cartPopup").style.display =
     "block";
 
 }
@@ -1180,9 +1001,7 @@ function showCart(){
 
 function closeCart(){
 
-  document.getElementById(
-    "cartPopup"
-  ).style.display =
+  document.getElementById("cartPopup").style.display =
     "none";
 
 }
@@ -1196,9 +1015,7 @@ function openCheckout(){
 
   if(cart.length === 0){
 
-    alert(
-      "Your cart is empty!"
-    );
+    alert("Your cart is empty!");
 
     return;
 
@@ -1207,33 +1024,26 @@ function openCheckout(){
 
   closeCart();
 
-
-  paymentConfirmed =
-    false;
-
+  paymentConfirmed = false;
 
   updateCheckout();
 
-
-  document.getElementById(
-    "checkoutPopup"
-  ).style.display =
+  document.getElementById("checkoutPopup").style.display =
     "block";
 
 
-  document.getElementById(
-    "paymentStatus"
-  ).innerText =
+  document.getElementById("paymentStatus").innerText =
     "Payment not confirmed";
+
+  document.getElementById("paymentStatus").style.color =
+    "#777";
 
 }
 
 
 function closeCheckout(){
 
-  document.getElementById(
-    "checkoutPopup"
-  ).style.display =
+  document.getElementById("checkoutPopup").style.display =
     "none";
 
 }
@@ -1251,26 +1061,18 @@ function updateCheckout(){
   cart.forEach(item => {
 
     const itemTotal =
-      item.price *
-      item.qty;
-
+      item.price * item.qty;
 
     html += `
 
       <div class="summary-item">
 
         <span>
-
-          ${item.name}
-          × ${item.qty}
-
+          ${item.name} × ${item.qty}
         </span>
 
         <span>
-
-          ₹${itemTotal
-          .toLocaleString("en-IN")}
-
+          ₹${itemTotal.toLocaleString("en-IN")}
         </span>
 
       </div>
@@ -1280,25 +1082,18 @@ function updateCheckout(){
   });
 
 
-  document.getElementById(
-    "checkoutItems"
-  ).innerHTML =
+  document.getElementById("checkoutItems").innerHTML =
     html;
 
 
-  const total =
-    getTotal();
+  const total = getTotal();
 
 
-  document.getElementById(
-    "checkoutTotal"
-  ).innerText =
+  document.getElementById("checkoutTotal").innerText =
     total.toLocaleString("en-IN");
 
 
-  document.getElementById(
-    "qrAmount"
-  ).innerText =
+  document.getElementById("qrAmount").innerText =
     total.toLocaleString("en-IN");
 
 
@@ -1308,13 +1103,12 @@ function updateCheckout(){
 
 
 /* =========================
-   UPI PAYMENT URL
+   CREATE UPI PAYMENT URL
 ========================= */
 
 function createUPIURL(amount){
 
   return (
-
     "upi://pay" +
 
     "?pa=" +
@@ -1324,12 +1118,9 @@ function createUPIURL(amount){
     encodeURIComponent(UPI_NAME) +
 
     "&am=" +
-    encodeURIComponent(
-      amount.toFixed(2)
-    ) +
+    encodeURIComponent(amount.toFixed(2)) +
 
     "&cu=INR"
-
   );
 
 }
@@ -1346,21 +1137,13 @@ function generateUPIQR(amount){
 
 
   const qrURL =
-
-    "https://api.qrserver.com/" +
-    "v1/create-qr-code/" +
-
+    "https://api.qrserver.com/v1/create-qr-code/" +
     "?size=300x300" +
-
     "&data=" +
-    encodeURIComponent(
-      upiURL
-    );
+    encodeURIComponent(upiURL);
 
 
-  document.getElementById(
-    "upiQr"
-  ).src =
+  document.getElementById("upiQr").src =
     qrURL;
 
 }
@@ -1372,15 +1155,12 @@ function generateUPIQR(amount){
 
 function tapToPay(){
 
-  const total =
-    getTotal();
+  const total = getTotal();
 
 
   if(total <= 0){
 
-    alert(
-      "Your cart is empty!"
-    );
+    alert("Your cart is empty!");
 
     return;
 
@@ -1392,8 +1172,8 @@ function tapToPay(){
 
 
   /*
-    Opens the device's
-    supported UPI handler.
+    Opens the phone's supported
+    UPI payment handler.
   */
 
   window.location.href =
@@ -1403,30 +1183,29 @@ function tapToPay(){
 
 
 /* =========================
-   PAYMENT CONFIRM
+   I HAVE PAID
 ========================= */
 
 function confirmPayment(){
 
-  paymentConfirmed =
-    true;
+  paymentConfirmed = true;
 
 
-  document.getElementById(
-    "paymentStatus"
-  ).innerText =
+  const status =
+    document.getElementById("paymentStatus");
+
+
+  status.innerText =
     "✅ Payment marked as paid";
 
 
-  document.getElementById(
-    "paymentStatus"
-  ).style.color =
+  status.style.color =
     "#00c853";
 
 
   alert(
     "Payment marked as completed.\n\n" +
-    "Your payment will be manually verified."
+    "Payment will be manually verified."
   );
 
 }
@@ -1447,9 +1226,7 @@ document
 
     if(cart.length === 0){
 
-      alert(
-        "Your cart is empty!"
-      );
+      alert("Your cart is empty!");
 
       return;
 
@@ -1459,7 +1236,7 @@ document
     if(!paymentConfirmed){
 
       alert(
-        "Please complete UPI payment first, " +
+        "Please complete the UPI payment first, " +
         "then tap 'I HAVE PAID'."
       );
 
@@ -1469,33 +1246,23 @@ document
 
 
     const name =
-      document.getElementById(
-        "customerName"
-      ).value;
+      document.getElementById("customerName").value;
 
 
     const mobile =
-      document.getElementById(
-        "customerMobile"
-      ).value;
+      document.getElementById("customerMobile").value;
 
 
     const address =
-      document.getElementById(
-        "customerAddress"
-      ).value;
+      document.getElementById("customerAddress").value;
 
 
     const city =
-      document.getElementById(
-        "customerCity"
-      ).value;
+      document.getElementById("customerCity").value;
 
 
     const pin =
-      document.getElementById(
-        "customerPin"
-      ).value;
+      document.getElementById("customerPin").value;
 
 
     const total =
@@ -1508,7 +1275,6 @@ document
     cart.forEach(item => {
 
       orderText +=
-
         item.name +
         " × " +
         item.qty +
@@ -1519,7 +1285,7 @@ document
 
     alert(
 
-      "ORDER RECEIVED! 🎉\n\n" +
+      "🎉 ORDER RECEIVED!\n\n" +
 
       "Customer: " +
       name +
@@ -1533,12 +1299,9 @@ document
       orderText +
 
       "\nTotal: ₹" +
-      total.toLocaleString(
-        "en-IN"
-      ) +
+      total.toLocaleString("en-IN") +
 
-      "\n\nAddress:\n" +
-
+      "\n\nDelivery Address:\n" +
       address +
       ", " +
       city +
@@ -1550,31 +1313,25 @@ document
     );
 
 
-    /* CLEAR */
+    /* CLEAR CART */
 
     cart = [];
 
-    paymentConfirmed =
-      false;
-
+    paymentConfirmed = false;
 
     updateCart();
 
     closeCheckout();
 
-
     document
-    .getElementById(
-      "checkoutForm"
-    )
-    .reset();
+      .getElementById("checkoutForm")
+      .reset();
 
   }
 );
 
 
-/* INITIAL */
-
+/* INITIAL LOAD */
 updateCart();
 
 </script>
