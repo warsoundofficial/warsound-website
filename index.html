@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-
 <title>WAR SOUND | Premium Audio</title>
 
 <style>
@@ -15,506 +13,243 @@
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial,sans-serif;
   background:#050505;
-  color:#fff;
-  line-height:1.5;
+  color:white;
 }
 
 header{
   position:sticky;
   top:0;
-  z-index:1000;
-  background:rgba(5,5,5,.95);
-  border-bottom:1px solid #222;
-  padding:15px 5%;
+  z-index:10;
+  background:#090909;
+  border-bottom:1px solid #292929;
+  padding:15px 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  backdrop-filter:blur(10px);
 }
 
 .logo{
-  font-size:27px;
+  font-size:25px;
   font-weight:900;
-  color:#ff2020;
   letter-spacing:2px;
+  color:#e50914;
 }
 
 .logo span{
   color:white;
 }
 
-.cartButton{
+.cartBtn{
   background:#e50914;
   color:white;
   border:0;
+  border-radius:25px;
   padding:11px 18px;
-  border-radius:8px;
   font-weight:bold;
   cursor:pointer;
 }
 
 .hero{
-  min-height:520px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   text-align:center;
-  padding:60px 20px;
-  background:
-    radial-gradient(circle at center,#350000 0,#120000 25%,#050505 65%);
+  padding:70px 20px 50px;
+  background:radial-gradient(circle,#350000,#050505 60%);
 }
 
 .hero h1{
-  font-size:clamp(45px,9vw,90px);
-  font-weight:1000;
-  letter-spacing:4px;
+  font-size:48px;
+  letter-spacing:3px;
 }
 
 .hero h1 span{
-  color:#ff1616;
-}
-
-.hero p{
-  margin:18px auto;
-  color:#bbb;
-  max-width:650px;
-  font-size:18px;
-}
-
-.hero-btn{
-  display:inline-block;
-  margin-top:20px;
-  background:#e50914;
-  color:white;
-  padding:14px 28px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-section{
-  padding:60px 5%;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.section-title h2{
-  font-size:35px;
-}
-
-.section-title p{
-  color:#999;
-  margin-top:8px;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:22px;
-}
-
-.product{
-  background:linear-gradient(145deg,#171717,#090909);
-  border:1px solid #292929;
-  border-radius:15px;
-  padding:18px;
-  text-align:center;
-  transition:.3s;
-  box-shadow:0 0 25px rgba(255,0,0,.05);
-}
-
-.product:hover{
-  transform:translateY(-6px);
-  border-color:#e50914;
-  box-shadow:0 0 30px rgba(255,0,0,.15);
-}
-
-.product-img{
-  width:100%;
-  height:210px;
-  object-fit:contain;
-  border-radius:10px;
-  background:#111;
-  margin-bottom:15px;
-}
-
-.product h3{
-  font-size:21px;
-}
-
-.product p{
-  color:#aaa;
-  font-size:14px;
-  margin:8px 0;
-}
-
-.price{
-  color:#ff2525;
-  font-size:24px;
-  font-weight:bold;
-  margin:12px 0;
-}
-
-.add-btn{
-  width:100%;
-  background:#e50914;
-  color:#fff;
-  border:0;
-  padding:13px;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.add-btn:hover{
-  background:#ff2424;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.feature{
-  background:#101010;
-  border:1px solid #222;
-  border-radius:12px;
-  padding:25px;
-  text-align:center;
-}
-
-.feature-icon{
-  font-size:35px;
-  margin-bottom:10px;
-}
-
-.feature h3{
-  margin-bottom:7px;
-}
-
-.feature p{
-  color:#999;
-}
-
-.about{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-  color:#aaa;
-}
-
-footer{
-  border-top:1px solid #222;
-  padding:35px 5%;
-  text-align:center;
-  background:#030303;
-  color:#777;
-}
-
-footer strong{
   color:#e50914;
 }
 
-/* CART */
-
-.cart-popup,
-.checkout-popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:2000;
-  background:rgba(0,0,0,.8);
-  padding:20px;
-  overflow:auto;
-}
-
-.cart-box,
-.checkout-box{
-  max-width:650px;
-  margin:50px auto;
-  background:#111;
-  border:1px solid #333;
-  border-radius:15px;
-  padding:25px;
-  box-shadow:0 0 40px rgba(255,0,0,.15);
-}
-
-.popup-header,
-.checkout-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.close-btn,
-.checkout-close{
-  background:#222;
-  color:#fff;
-  border:0;
-  font-size:25px;
-  width:40px;
-  height:40px;
-  border-radius:7px;
-  cursor:pointer;
-}
-
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  padding:15px 0;
-  border-bottom:1px solid #292929;
-}
-
-.cart-item h4{
+.hero p{
+  color:#aaa;
+  margin-top:12px;
   font-size:17px;
 }
 
-.cart-item small{
-  color:#999;
+.products{
+  padding:35px 6%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
 }
 
-.qty{
+.card{
+  background:#101010;
+  border:1px solid #292929;
+  border-radius:18px;
+  padding:15px;
+  box-shadow:0 8px 30px #000;
+}
+
+.photo{
+  height:230px;
+  border-radius:14px;
+  background:#181818;
   display:flex;
   align-items:center;
-  gap:8px;
+  justify-content:center;
+  overflow:hidden;
 }
 
-.qty button{
-  width:30px;
-  height:30px;
-  border:0;
-  background:#e50914;
-  color:#fff;
-  border-radius:5px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.remove-btn{
-  background:#333;
-  color:#fff;
-  border:0;
-  padding:7px 9px;
-  border-radius:5px;
-  cursor:pointer;
-}
-
-.cart-total{
-  display:flex;
-  justify-content:space-between;
-  margin:20px 0;
-  font-size:22px;
-  font-weight:bold;
-}
-
-.checkout-btn,
-.place-order{
+.photo img{
   width:100%;
-  padding:15px;
-  border:0;
-  border-radius:8px;
-  background:#e50914;
-  color:#fff;
-  font-size:16px;
+  height:100%;
+  object-fit:contain;
+}
+
+.demo{
+  font-size:80px;
+}
+
+.card h2{
+  margin-top:15px;
+}
+
+.price{
+  font-size:23px;
+  color:#ff3030;
   font-weight:bold;
-  cursor:pointer;
+  margin:8px 0;
 }
 
-/* CHECKOUT */
-
-.form-group{
-  margin-bottom:15px;
-}
-
-.form-group label{
-  display:block;
-  margin-bottom:6px;
-  color:#ddd;
-}
-
-.form-group input,
-.form-group textarea{
-  width:100%;
-  padding:13px;
-  background:#080808;
-  color:#fff;
-  border:1px solid #333;
-  border-radius:7px;
-  outline:none;
-}
-
-.form-group textarea{
-  min-height:90px;
-  resize:vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-  border-color:#e50914;
-}
-
-.checkout-section-title{
-  margin:25px 0 15px;
-  padding-bottom:8px;
-  border-bottom:1px solid #333;
-  color:#ff2424;
-}
-
-.checkout-summary{
-  background:#080808;
-  border:1px solid #222;
-  border-radius:10px;
-  padding:15px;
-  margin:20px 0;
-}
-
-.summary-item{
-  display:flex;
-  justify-content:space-between;
-  padding:6px 0;
+.card ul{
+  padding-left:20px;
   color:#bbb;
-}
-
-.checkout-total{
-  border-top:1px solid #333;
-  margin-top:10px;
-  padding-top:12px;
-  display:flex;
-  justify-content:space-between;
-  font-size:21px;
-  font-weight:bold;
-}
-
-.payment-box{
-  background:#0b0b0b;
-  border:1px solid #2c2c2c;
-  border-radius:12px;
-  padding:20px;
-  text-align:center;
-}
-
-.payment-amount{
-  color:#ff2020;
-  font-size:30px;
-  font-weight:bold;
-  margin:8px;
-}
-
-.tap-pay-btn,
-.pay-confirm-btn{
-  width:100%;
-  padding:13px;
-  margin-top:10px;
-  border:0;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.tap-pay-btn{
-  background:#222;
-  color:#fff;
-}
-
-.pay-confirm-btn{
-  background:#168a38;
-  color:#fff;
-}
-
-#upiQr{
-  width:220px;
-  height:220px;
-  max-width:100%;
-  margin:15px auto;
-  background:white;
-  padding:8px;
-  border-radius:8px;
-}
-
-#paymentStatus{
-  color:#aaa;
-  margin-top:10px;
+  line-height:1.7;
   font-size:14px;
 }
 
-.whatsapp-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 20px;
-  background:#25D366;
-  color:#fff;
-  border-radius:8px;
-  text-decoration:none;
+.add{
+  width:100%;
+  margin-top:14px;
+  padding:12px;
+  border:0;
+  border-radius:10px;
+  background:#e50914;
+  color:white;
   font-weight:bold;
+  cursor:pointer;
 }
 
-.empty{
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000d;
+  z-index:30;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.box{
+  background:#111;
+  border:1px solid #333;
+  border-radius:18px;
+  padding:22px;
+  width:min(500px,100%);
+  max-height:90vh;
+  overflow:auto;
+}
+
+.box h2{
+  margin-bottom:15px;
+}
+
+.close{
+  float:right;
+  background:none;
+  color:#aaa;
+  border:0;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #292929;
+}
+
+.qty button{
+  width:28px;
+  height:28px;
+  background:#222;
+  color:white;
+  border:1px solid #555;
+  border-radius:5px;
+}
+
+.total{
+  font-size:21px;
+  font-weight:bold;
+  margin:18px 0;
+}
+
+.next{
+  width:100%;
+  padding:13px;
+  background:#e50914;
+  color:white;
+  border:0;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+input,textarea{
+  width:100%;
+  background:#080808;
+  color:white;
+  border:1px solid #444;
+  border-radius:9px;
+  padding:12px;
+  margin:7px 0;
+}
+
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.qr{
   text-align:center;
-  color:#999;
-  padding:30px;
+  margin:15px;
 }
 
-/* MOBILE */
-
-@media(max-width:900px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .features{
-    grid-template-columns:1fr;
-  }
+.qr img{
+  width:220px;
+  background:white;
+  padding:8px;
+  border-radius:10px;
 }
 
-@media(max-width:600px){
-  header{
-    padding:12px 4%;
-  }
+.center{
+  text-align:center;
+}
 
-  .logo{
-    font-size:21px;
-  }
+.muted{
+  color:#aaa;
+  font-size:13px;
+}
 
-  .cartButton{
-    padding:9px 12px;
-    font-size:12px;
-  }
+.success{
+  font-size:55px;
+  color:#00d26a;
+}
 
-  .products{
-    grid-template-columns:1fr;
-  }
-
-  .product-img{
-    height:230px;
-  }
-
-  section{
-    padding:45px 5%;
-  }
-
-  .hero{
-    min-height:470px;
-  }
-
-  .cart-box,
-  .checkout-box{
-    margin:15px auto;
-    padding:18px;
-  }
-
-  .cart-item{
-    align-items:flex-start;
-    flex-direction:column;
-  }
+footer{
+  text-align:center;
+  padding:35px;
+  color:#777;
+  border-top:1px solid #222;
 }
 </style>
 </head>
@@ -524,831 +259,451 @@ footer strong{
 <header>
   <div class="logo">WAR <span>SOUND</span></div>
 
-  <button class="cartButton" onclick="showCart()">
-    🛒 CART (<span id="cartCount">0</span>)
+  <button class="cartBtn" onclick="openCart()">
+    🛒 Cart (<span id="count">0</span>)
   </button>
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
-  <div>
-    <h1>WAR <span>SOUND</span></h1>
-
-    <p>
-      Experience powerful sound, deep bass and premium design.
-      Discover the next generation of wireless audio.
-    </p>
-
-    <a href="#products" class="hero-btn">EXPLORE PRODUCTS</a>
-  </div>
+  <h1>WAR <span>SOUND</span></h1>
+  <p>Premium Sound • Deep Bass • Wireless Freedom</p>
 </section>
 
 
-<!-- PRODUCTS -->
+<section class="products">
 
-<section id="products">
 
-  <div class="section-title">
-    <h2>OUR PRODUCTS</h2>
-    <p>Demo WAR SOUND audio collection</p>
+<!-- T20 -->
+<div class="card">
+
+  <div class="photo">
+    <img src="./ic_launcher.png" alt="WAR SOUND T20">
   </div>
 
-  <div class="products">
+  <h2>WAR SOUND T20</h2>
+
+  <div class="price">₹999</div>
+
+  <ul>
+    <li>Deep Bass Sound</li>
+    <li>Bluetooth Wireless</li>
+    <li>Touch Control</li>
+    <li>Dual Mic Calling</li>
+    <li>Charging Case</li>
+    <li>Music + Calling</li>
+    <li>Premium Compact Design</li>
+  </ul>
+
+  <button class="add"
+  onclick="add('WAR SOUND T20',999,'./ic_launcher.png')">
+  ADD TO CART
+  </button>
 
-    <!-- X1 -->
-
-    <div class="product">
-      <div class="product-img" style="display:flex;align-items:center;justify-content:center;font-size:80px;">
-        🎧
-      </div>
-
-      <h3>WAR SOUND X1</h3>
-
-      <p>
-        Wireless Earphones • Deep Bass • Clear Sound
-      </p>
-
-      <div class="price">₹699</div>
-
-      <button class="add-btn"
-        onclick="addCart('WAR SOUND X1',699)">
-        ADD TO CART
-      </button>
-    </div>
-
-
-    <!-- T20 -->
-
-    <div class="product">
-
-      <img
-        class="product-img"
-        src="./ic_launcher.png"
-        alt="WAR SOUND T20">
-
-      <h3>WAR SOUND T20</h3>
-
-      <p>
-        Premium Earphones • Powerful Bass • Stylish Design
-      </p>
-
-      <div class="price">₹999</div>
-
-      <button class="add-btn"
-        onclick="addCart('WAR SOUND T20',999)">
-        ADD TO CART
-      </button>
-
-    </div>
-
-
-    <!-- PRO -->
-
-    <div class="product">
-
-      <div class="product-img" style="display:flex;align-items:center;justify-content:center;font-size:80px;">
-        🎧
-      </div>
-
-      <h3>WAR SOUND PRO</h3>
-
-      <p>
-        Premium Wireless Earbuds • ENC • Long Battery
-      </p>
-
-      <div class="price">₹1,499</div>
-
-      <button class="add-btn"
-        onclick="addCart('WAR SOUND PRO',1499)">
-        ADD TO CART
-      </button>
-
-    </div>
-
-
-    <!-- BUDS -->
-
-    <div class="product">
-
-      <div class="product-img" style="display:flex;align-items:center;justify-content:center;font-size:80px;">
-        🎵
-      </div>
-
-      <h3>WAR SOUND BUDS</h3>
-
-      <p>
-        Compact Earbuds • Rich Bass • Gaming Friendly
-      </p>
-
-      <div class="price">₹1,199</div>
-
-      <button class="add-btn"
-        onclick="addCart('WAR SOUND BUDS',1199)">
-        ADD TO CART
-      </button>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- FEATURES -->
-
-<section>
-
-  <div class="section-title">
-    <h2>WHY WAR SOUND?</h2>
-    <p>Built for people who love powerful audio.</p>
-  </div>
-
-  <div class="features">
-
-    <div class="feature">
-      <div class="feature-icon">🔊</div>
-      <h3>POWERFUL BASS</h3>
-      <p>Enjoy an immersive and energetic listening experience.</p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">🔋</div>
-      <h3>LONG BATTERY</h3>
-      <p>Designed for music, gaming and everyday use.</p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">⚡</div>
-      <h3>FAST & EASY</h3>
-      <p>Simple shopping experience from product to checkout.</p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ABOUT -->
-
-<section>
-
-  <div class="section-title">
-    <h2>ABOUT WAR SOUND</h2>
-  </div>
-
-  <div class="about">
-
-    <p>
-      WAR SOUND is a demo premium audio brand concept focused on
-      modern earphones and earbuds with powerful sound,
-      stylish design and an easy online shopping experience.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <p>
-    © 2026 <strong>WAR SOUND</strong>. All Rights Reserved.
-  </p>
-
-  <p style="margin-top:8px;">
-    Premium Audio • Earphones • Earbuds
-  </p>
-
-  <a
-    class="whatsapp-btn"
-    href="https://wa.me/917777983240"
-    target="_blank">
-    📱 WhatsApp
-  </a>
-
-</footer>
-
-
-<!-- CART POPUP -->
-
-<div id="cartPopup" class="cart-popup">
-
-  <div class="cart-box">
-
-    <div class="popup-header">
-      <h2>🛒 YOUR CART</h2>
-
-      <button
-        class="close-btn"
-        onclick="closeCart()">
-        ×
-      </button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-      <span>Total</span>
-
-      <span>
-        ₹<span id="cartTotal">0</span>
-      </span>
-    </div>
-
-    <button
-      class="checkout-btn"
-      onclick="openCheckout()">
-      CHECKOUT
-    </button>
-
-  </div>
 </div>
 
 
-<!-- CHECKOUT POPUP -->
+<!-- X1 -->
+<div class="card">
 
-<div id="checkoutPopup" class="checkout-popup">
+  <div class="photo">
+    <div class="demo">🎧</div>
+  </div>
 
-  <div class="checkout-box">
+  <h2>WAR SOUND X1</h2>
 
-    <div class="checkout-header">
+  <div class="price">₹699</div>
 
-      <h2>CHECKOUT</h2>
+  <ul>
+    <li>Powerful Bass</li>
+    <li>Bluetooth Wireless</li>
+    <li>Clear Calling</li>
+    <li>Comfort Fit</li>
+    <li>Portable Charging Case</li>
+    <li>Premium Finish</li>
+  </ul>
 
-      <button
-        class="checkout-close"
-        onclick="closeCheckout()">
-        ×
-      </button>
+  <button class="add"
+  onclick="add('WAR SOUND X1',699,'')">
+  ADD TO CART
+  </button>
 
+</div>
+
+
+<!-- PRO -->
+<div class="card">
+
+  <div class="photo">
+    <div class="demo">🎧</div>
+  </div>
+
+  <h2>WAR SOUND PRO</h2>
+
+  <div class="price">₹1,499</div>
+
+  <ul>
+    <li>Powerful Bass</li>
+    <li>ENC Calling</li>
+    <li>Touch Controls</li>
+    <li>Low-Latency Gaming Mode</li>
+    <li>Long Battery</li>
+    <li>Wireless Charging Case</li>
+    <li>Premium Design</li>
+  </ul>
+
+  <button class="add"
+  onclick="add('WAR SOUND PRO',1499,'')">
+  ADD TO CART
+  </button>
+
+</div>
+
+
+<!-- BUDS -->
+<div class="card">
+
+  <div class="photo">
+    <div class="demo">🎵</div>
+  </div>
+
+  <h2>WAR SOUND BUDS</h2>
+
+  <div class="price">₹1,199</div>
+
+  <ul>
+    <li>Rich Bass</li>
+    <li>Bluetooth Wireless</li>
+    <li>Gaming Friendly</li>
+    <li>Clear Calling</li>
+    <li>Touch Control</li>
+    <li>Portable Charging Case</li>
+    <li>Premium Audio</li>
+  </ul>
+
+  <button class="add"
+  onclick="add('WAR SOUND BUDS',1199,'')">
+  ADD TO CART
+  </button>
+
+</div>
+
+</section>
+
+
+<footer>
+© 2026 WAR SOUND • Premium Audio
+</footer>
+
+
+<!-- CART PAGE -->
+
+<div class="overlay" id="cartBox">
+
+  <div class="box">
+
+    <button class="close" onclick="closeAll()">×</button>
+
+    <h2>🛒 Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="total">
+      Total: ₹<span id="cartTotal">0</span>
     </div>
 
-
-    <form id="checkoutForm">
-
-      <!-- DELIVERY -->
-
-      <h3 class="checkout-section-title">
-        📦 DELIVERY DETAILS
-      </h3>
-
-      <div class="form-group">
-
-        <label>Full Name</label>
-
-        <input
-          id="customerName"
-          type="text"
-          placeholder="Enter your name"
-          required>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Mobile Number</label>
-
-        <input
-          id="customerMobile"
-          type="tel"
-          placeholder="Enter mobile number"
-          pattern="[0-9]{10}"
-          required>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>Address</label>
-
-        <textarea
-          id="customerAddress"
-          placeholder="House / Street / Area"
-          required></textarea>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>City</label>
-
-        <input
-          id="customerCity"
-          type="text"
-          placeholder="Enter city"
-          required>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>PIN Code</label>
-
-        <input
-          id="customerPin"
-          type="tel"
-          placeholder="6 digit PIN"
-          pattern="[0-9]{6}"
-          required>
-
-      </div>
-
-
-      <!-- ORDER SUMMARY -->
-
-      <h3 class="checkout-section-title">
-        🧾 ORDER SUMMARY
-      </h3>
-
-      <div class="checkout-summary">
-
-        <div id="checkoutItems"></div>
-
-        <div class="checkout-total">
-
-          <span>Total</span>
-
-          <span>
-            ₹<span id="checkoutTotal">0</span>
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <!-- PAYMENT -->
-
-      <h3 class="checkout-section-title">
-        💳 PAYMENT OPTION
-      </h3>
-
-      <div class="payment-box">
-
-        <h3>PAY VIA UPI</h3>
-
-        <p style="color:#999;">
-          Amount to Pay
-        </p>
-
-        <div class="payment-amount">
-          ₹<span id="qrAmount">0</span>
-        </div>
-
-
-        <button
-          type="button"
-          class="tap-pay-btn"
-          onclick="tapToPay()">
-          📱 TAP TO PAY
-        </button>
-
-        <p style="color:#777;margin-top:8px;">
-          Opens a supported UPI app on your phone
-        </p>
-
-
-        <h3 style="margin-top:20px;">
-          OR SCAN QR CODE
-        </h3>
-
-        <img
-          id="upiQr"
-          src=""
-          alt="UPI QR Code">
-
-
-        <p style="color:#aaa;">
-          UPI ID:
-          <strong>patildipali1919@ibl</strong>
-        </p>
-
-
-        <button
-          type="button"
-          class="pay-confirm-btn"
-          onclick="confirmPayment()">
-          ✅ I HAVE PAID
-        </button>
-
-        <p id="paymentStatus">
-          Payment not confirmed
-        </p>
-
-      </div>
-
-
-      <button
-        type="submit"
-        class="place-order"
-        style="margin-top:20px;">
-        PLACE ORDER
-      </button>
-
-    </form>
+    <button class="next" onclick="delivery()">
+      CONTINUE TO DELIVERY →
+    </button>
 
   </div>
+
+</div>
+
+
+<!-- DELIVERY PAGE -->
+
+<div class="overlay" id="deliveryBox">
+
+  <div class="box">
+
+    <button class="close" onclick="closeAll()">×</button>
+
+    <h2>📦 Delivery Details</h2>
+
+    <input
+      id="name"
+      placeholder="Full Name"
+    >
+
+    <input
+      id="phone"
+      placeholder="Mobile Number"
+      type="tel"
+    >
+
+    <textarea
+      id="address"
+      placeholder="Full Address">
+    </textarea>
+
+    <input
+      id="city"
+      placeholder="City"
+    >
+
+    <input
+      id="pin"
+      placeholder="PIN Code"
+      type="number"
+    >
+
+    <button class="next" onclick="payment()">
+      GO TO PAYMENT →
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- PAYMENT PAGE -->
+
+<div class="overlay" id="paymentBox">
+
+  <div class="box center">
+
+    <button class="close" onclick="closeAll()">×</button>
+
+    <h2>💳 Payment</h2>
+
+    <p class="muted">
+      Scan QR and pay the exact amount
+    </p>
+
+    <div class="total">
+      ₹<span id="payTotal">0</span>
+    </div>
+
+    <div class="qr">
+      <img id="qr" alt="UPI QR Code">
+    </div>
+
+    <p>
+      UPI ID:
+      <b>patildipali1919@ibl</b>
+    </p>
+
+    <br>
+
+    <button class="next" onclick="placeOrder()">
+      I HAVE PAID → PLACE ORDER
+    </button>
+
+    <p class="muted" style="margin-top:12px">
+      Payment verification is not automatic on this demo website.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- SUCCESS PAGE -->
+
+<div class="overlay" id="successBox">
+
+  <div class="box center">
+
+    <div class="success">✓</div>
+
+    <h2>Order Placed!</h2>
+
+    <p style="margin:12px 0;color:#bbb">
+      Thank you for ordering from WAR SOUND.
+    </p>
+
+    <button class="next" onclick="location.reload()">
+      DONE
+    </button>
+
+  </div>
+
 </div>
 
 
 <script>
 
-const UPI_ID = "patildipali1919@ibl";
-const UPI_NAME = "WAR SOUND";
-
 let cart = [];
-let paymentConfirmed = false;
 
 
-/* ADD TO CART */
+function add(name,price,img){
 
-function addCart(name, price){
+  let product = cart.find(
+    item => item.name === name
+  );
 
-  const existing = cart.find(item => item.name === name);
+  if(product){
 
-  if(existing){
-
-    existing.qty++;
+    product.qty++;
 
   }else{
 
     cart.push({
       name:name,
       price:price,
+      img:img,
       qty:1
     });
 
   }
 
-  updateCart();
+  update();
 
-  alert(name + " added to cart!");
-
-}
-
-
-/* INCREASE */
-
-function increaseQty(index){
-
-  cart[index].qty++;
-
-  updateCart();
+  alert(name + " added to cart");
 
 }
 
 
-/* DECREASE */
+function update(){
 
-function decreaseQty(index){
+  let total = 0;
+  let count = 0;
 
-  if(cart[index].qty > 1){
+  cart.forEach(item => {
 
-    cart[index].qty--;
+    total += item.price * item.qty;
+    count += item.qty;
 
-  }else{
+  });
+
+
+  document.getElementById("count").textContent = count;
+
+  document.getElementById("cartTotal").textContent = total;
+
+  document.getElementById("payTotal").textContent = total;
+
+
+  let html = "";
+
+
+  cart.forEach((item,index) => {
+
+    html += `
+
+      <div class="item">
+
+        <div>
+
+          ${item.name}
+
+          <br>
+
+          <span class="muted">
+            ₹${item.price} × ${item.qty}
+          </span>
+
+        </div>
+
+        <div class="qty">
+
+          <button onclick="changeQty(${index},-1)">
+            −
+          </button>
+
+          ${item.qty}
+
+          <button onclick="changeQty(${index},1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  if(!cart.length){
+
+    html =
+    "<p class='muted'>Your cart is empty.</p>";
+
+  }
+
+
+  document.getElementById("cartItems").innerHTML = html;
+
+}
+
+
+function changeQty(index,value){
+
+  cart[index].qty += value;
+
+
+  if(cart[index].qty <= 0){
 
     cart.splice(index,1);
 
   }
 
-  updateCart();
+
+  update();
 
 }
 
 
-/* REMOVE */
+function openCart(){
 
-function removeItem(index){
+  update();
 
-  cart.splice(index,1);
-
-  updateCart();
+  document.getElementById("cartBox").style.display="flex";
 
 }
 
 
-/* TOTAL */
+function delivery(){
 
-function getTotal(){
+  if(!cart.length){
 
-  return cart.reduce(
-    (total,item) =>
-    total + (item.price * item.qty),
-    0
-  );
-
-}
-
-
-/* UPDATE CART */
-
-function updateCart(){
-
-  const cartItems =
-    document.getElementById("cartItems");
-
-  const cartCount =
-    document.getElementById("cartCount");
-
-  const cartTotal =
-    document.getElementById("cartTotal");
-
-
-  let count = 0;
-
-  cart.forEach(item => {
-    count += item.qty;
-  });
-
-
-  cartCount.textContent = count;
-
-  cartTotal.textContent =
-    getTotal().toLocaleString("en-IN");
-
-
-  if(cart.length === 0){
-
-    cartItems.innerHTML =
-      '<div class="empty">Your cart is empty.</div>';
+    alert("Cart is empty");
 
     return;
 
   }
 
 
-  cartItems.innerHTML = cart.map(
-    (item,index) => `
+  closeAll();
 
-    <div class="cart-item">
-
-      <div>
-
-        <h4>${item.name}</h4>
-
-        <small>
-          ₹${item.price.toLocaleString("en-IN")}
-          × ${item.qty}
-        </small>
-
-      </div>
-
-
-      <div class="qty">
-
-        <button
-          onclick="decreaseQty(${index})">
-          −
-        </button>
-
-        <strong>${item.qty}</strong>
-
-        <button
-          onclick="increaseQty(${index})">
-          +
-        </button>
-
-        <button
-          class="remove-btn"
-          onclick="removeItem(${index})">
-          🗑
-        </button>
-
-      </div>
-
-    </div>
-
-    `
-  ).join("");
+  document.getElementById("deliveryBox").style.display="flex";
 
 }
 
 
-/* SHOW CART */
+function payment(){
 
-function showCart(){
+  let fields = [
+    "name",
+    "phone",
+    "address",
+    "city",
+    "pin"
+  ];
 
-  document.getElementById("cartPopup").style.display="block";
 
-  updateCart();
+  for(let id of fields){
 
-}
+    let value =
+    document.getElementById(id).value.trim();
 
 
-/* CLOSE CART */
+    if(!value){
 
-function closeCart(){
-
-  document.getElementById("cartPopup").style.display="none";
-
-}
-
-
-/* OPEN CHECKOUT */
-
-function openCheckout(){
-
-  if(cart.length === 0){
-
-    alert("Your cart is empty!");
-
-    return;
-
-  }
-
-  closeCart();
-
-  paymentConfirmed = false;
-
-  document.getElementById("checkoutPopup").style.display="block";
-
-  updateCheckout();
-
-}
-
-
-/* CLOSE CHECKOUT */
-
-function closeCheckout(){
-
-  document.getElementById("checkoutPopup").style.display="none";
-
-}
-
-
-/* UPDATE CHECKOUT */
-
-function updateCheckout(){
-
-  const checkoutItems =
-    document.getElementById("checkoutItems");
-
-  const total =
-    getTotal();
-
-
-  checkoutItems.innerHTML =
-    cart.map(item => `
-
-      <div class="summary-item">
-
-        <span>
-          ${item.name} × ${item.qty}
-        </span>
-
-        <span>
-          ₹${(item.price * item.qty)
-          .toLocaleString("en-IN")}
-        </span>
-
-      </div>
-
-    `).join("");
-
-
-  document.getElementById("checkoutTotal")
-    .textContent =
-    total.toLocaleString("en-IN");
-
-
-  document.getElementById("qrAmount")
-    .textContent =
-    total.toLocaleString("en-IN");
-
-
-  generateUPIQR(total);
-
-}
-
-
-/* CREATE UPI LINK */
-
-function createUPIURL(amount){
-
-  return (
-    "upi://pay" +
-    "?pa=" + encodeURIComponent(UPI_ID) +
-    "&pn=" + encodeURIComponent(UPI_NAME) +
-    "&am=" + encodeURIComponent(amount.toFixed(2)) +
-    "&cu=INR"
-  );
-
-}
-
-
-/* DYNAMIC QR */
-
-function generateUPIQR(amount){
-
-  if(amount <= 0){
-
-    document.getElementById("upiQr").src="";
-
-    return;
-
-  }
-
-
-  const upiURL =
-    createUPIURL(amount);
-
-
-  const qrURL =
-    "https://api.qrserver.com/v1/create-qr-code/" +
-    "?size=300x300" +
-    "&data=" +
-    encodeURIComponent(upiURL);
-
-
-  document.getElementById("upiQr").src =
-    qrURL;
-
-}
-
-
-/* TAP TO PAY */
-
-function tapToPay(){
-
-  const total = getTotal();
-
-
-  if(total <= 0){
-
-    alert("Your cart is empty!");
-
-    return;
-
-  }
-
-
-  const upiURL =
-    createUPIURL(total);
-
-
-  window.location.href =
-    upiURL;
-
-}
-
-
-/* PAYMENT CONFIRM */
-
-function confirmPayment(){
-
-  paymentConfirmed = true;
-
-
-  document.getElementById("paymentStatus")
-    .textContent =
-    "✅ Payment marked as completed. Verification required.";
-
-  document.getElementById("paymentStatus")
-    .style.color =
-    "#20c75a";
-
-
-  alert(
-    "Payment marked as completed.\n\n" +
-    "Payment will need to be manually verified."
-  );
-
-}
-
-
-/* PLACE ORDER */
-
-document.getElementById("checkoutForm")
-.addEventListener("submit",function(e){
-
-  e.preventDefault();
-
-
-  if(cart.length === 0){
-
-    alert("Your cart is empty!");
-
-    return;
-
-  }
-
-
-  if(!paymentConfirmed){
-
-    const proceed =
-      confirm(
-        "Payment has not been marked as completed.\n\n" +
-        "Do you still want to place the order?"
-      );
-
-    if(!proceed){
+      alert("Please fill all delivery details");
 
       return;
 
@@ -1357,112 +712,61 @@ document.getElementById("checkoutForm")
   }
 
 
-  const name =
-    document.getElementById("customerName").value;
-
-  const mobile =
-    document.getElementById("customerMobile").value;
-
-  const address =
-    document.getElementById("customerAddress").value;
-
-  const city =
-    document.getElementById("customerCity").value;
-
-  const pin =
-    document.getElementById("customerPin").value;
+  let amount =
+  document.getElementById("cartTotal").textContent;
 
 
-  const total =
-    getTotal();
+  let upi =
+  "patildipali1919@ibl";
 
 
-  const orderText =
-`WAR SOUND ORDER
-
-Customer: ${name}
-Mobile: ${mobile}
-Address: ${address}
-City: ${city}
-PIN: ${pin}
-
-Products:
-${cart.map(item =>
-  item.name +
-  " × " +
-  item.qty +
-  " = ₹" +
-  (item.price * item.qty)
-).join("\n")}
-
-Total: ₹${total}`;
+  let qrData =
+  "upi://pay?pa=" +
+  upi +
+  "&pn=WAR%20SOUND" +
+  "&am=" +
+  amount +
+  "&cu=INR";
 
 
-  const whatsappURL =
-    "https://wa.me/?text=" +
-    encodeURIComponent(orderText);
+  let qrUrl =
+  "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
+  + encodeURIComponent(qrData);
 
 
-  alert(
-    "🎉 ORDER RECEIVED!\n\n" +
-    "Thank you, " + name + "!\n\n" +
-    "Total: ₹" + total.toLocaleString("en-IN")
+  document.getElementById("qr").src = qrUrl;
+
+
+  closeAll();
+
+  document.getElementById("paymentBox").style.display="flex";
+
+}
+
+
+function placeOrder(){
+
+  closeAll();
+
+  document.getElementById("successBox").style.display="flex";
+
+}
+
+
+function closeAll(){
+
+  document
+  .querySelectorAll(".overlay")
+  .forEach(
+    element => element.style.display="none"
   );
 
-
-  /* OPEN WHATSAPP */
-
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
+}
 
 
-  cart = [];
-
-  paymentConfirmed = false;
-
-  updateCart();
-
-  closeCheckout();
-
-  document.getElementById("checkoutForm").reset();
-
-});
-
-
-/* CLOSE POPUPS WHEN CLICKING OUTSIDE */
-
-window.addEventListener("click",function(e){
-
-  const cartPopup =
-    document.getElementById("cartPopup");
-
-  const checkoutPopup =
-    document.getElementById("checkoutPopup");
-
-
-  if(e.target === cartPopup){
-
-    closeCart();
-
-  }
-
-
-  if(e.target === checkoutPopup){
-
-    closeCheckout();
-
-  }
-
-});
-
-
-/* INITIAL */
-
-updateCart();
+update();
 
 </script>
 
 </body>
-  </html>
+</html>
